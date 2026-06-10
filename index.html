@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOYOBUILDS — Productivity Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFAF6;
+  --ink:#1C1917;
+  --ink-soft:#6B645C;
+  --rose:#D4818A;
+  --rose-deep:#C2596B;
+  --line:#E8E0D8;
+  --line-strong:#D8CEC2;
+  --c-content:#D4818A; --c-content-ink:#B9505F; --c-content-bg:rgba(212,129,138,.16);
+  --c-biz:#A78BFA;     --c-biz-ink:#7C5CE0;     --c-biz-bg:rgba(167,139,250,.16);
+  --c-admin:#94A3B8;   --c-admin-ink:#5D6B7E;   --c-admin-bg:rgba(148,163,184,.18);
+  --c-life:#6EE7B7;    --c-life-ink:#0E9F6E;    --c-life-bg:rgba(110,231,183,.20);
+  --disp:'Space Grotesk',sans-serif;
+  --mono:'Share Tech Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  background-image:radial-gradient(circle,rgba(28,25,23,.045) 1px,transparent 1.2px);
+  background-size:26px 26px;
+  color:var(--ink);
+  font-family:var(--disp);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 90px}
+
+/* ---------- reveal animation ---------- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.reveal{animation:fadeUp .65s cubic-bezier(.22,.8,.3,1) both;animation-delay:calc(var(--i,0)*70ms)}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}}
+
+/* ---------- top meta bar ---------- */
+.metabar{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);
+  border-bottom:1px solid var(--line-strong);
+  padding:14px 0 12px;
+}
+.metabar .live{display:flex;align-items:center;gap:7px;color:var(--ink)}
+.live-dot{width:7px;height:7px;background:var(--rose);border-radius:50%;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,129,138,.5)}55%{box-shadow:0 0 0 6px rgba(212,129,138,0)}}
+.metabar .spacer{flex:1}
+.sample-tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  border:1px solid #E2B96E;color:#9A6B14;background:rgba(226,185,110,.14);
+  padding:3px 9px;display:none;
+}
+.sample-tag.on{display:inline-block}
+
+/* ---------- masthead ---------- */
+.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:34px 0 26px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.brand h1{
+  font-size:clamp(44px,7vw,76px);font-weight:700;letter-spacing:-.035em;line-height:.94;
+}
+.brand h1 .accent{color:var(--rose)}
+.brand .strap{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;color:var(--ink-soft);margin-top:10px;text-transform:uppercase}
+.weeknav{text-align:right}
+.weeknav .label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:8px}
+.weeknav .range{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px;white-space:nowrap}
+.navbtns{display:flex;gap:8px;justify-content:flex-end}
+.navbtn{
+  font-family:var(--mono);font-size:13px;background:none;border:1px solid var(--ink);
+  color:var(--ink);width:38px;height:32px;cursor:pointer;transition:all .18s;
+}
+.navbtn.wide{width:auto;padding:0 14px;font-size:11px;letter-spacing:.1em}
+.navbtn:hover:not(:disabled){background:var(--ink);color:var(--bg)}
+.navbtn:disabled{opacity:.25;cursor:default}
+
+/* ---------- generic section ---------- */
+section{margin-top:46px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+.sec-no{font-family:var(--mono);font-size:11px;color:var(--rose-deep);letter-spacing:.08em}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.sec-rule{flex:1;height:1px;background:var(--line-strong)}
+.sec-note{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.05em}
+
+/* corner-tick card */
+.card{position:relative;border:1px solid var(--line-strong);background:rgba(255,255,255,.55)}
+.ticked::before,.ticked::after{
+  content:"";position:absolute;width:9px;height:9px;pointer-events:none;
+}
+.ticked::before{top:-1px;left:-1px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.ticked::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink)}
+
+/* ---------- today panel ---------- */
+.today{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);background:rgba(255,255,255,.6)}
+.today .cell{padding:26px 28px;border-right:1px solid var(--line-strong)}
+.today .cell:last-child{border-right:none}
+.today .k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--ink-soft);text-transform:uppercase}
+.today .v{font-size:54px;font-weight:700;letter-spacing:-.04em;line-height:1.05;margin-top:6px}
+.today .v .unit{font-size:20px;color:var(--ink-soft);font-weight:500;letter-spacing:0}
+.today .sub{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:4px;letter-spacing:.04em}
+.today .v.rose{color:var(--rose-deep)}
+
+/* ---------- filter tabs ---------- */
+.tabs{display:flex;gap:0;border:1px solid var(--ink);width:max-content;max-width:100%;overflow-x:auto;background:rgba(255,255,255,.6)}
+.tab{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:10px 18px;border:none;background:none;cursor:pointer;color:var(--ink-soft);
+  border-right:1px solid var(--line-strong);display:flex;align-items:center;gap:8px;transition:all .15s;white-space:nowrap;
+}
+.tab:last-child{border-right:none}
+.tab .dot{width:7px;height:7px;border-radius:50%;background:var(--ink-soft)}
+.tab:hover{color:var(--ink);background:rgba(28,25,23,.04)}
+.tab.active{background:var(--ink);color:var(--bg)}
+.tab.active .dot{outline:2px solid rgba(253,250,246,.5)}
+.tab .n{opacity:.65}
+
+/* ---------- weekly grid ---------- */
+.weekgrid{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--ink);background:rgba(255,255,255,.55)}
+.daycell{
+  border-right:1px solid var(--line);padding:14px 12px 16px;min-height:148px;cursor:pointer;
+  transition:background .15s;position:relative;
+}
+.daycell:last-child{border-right:none}
+.daycell:hover{background:rgba(212,129,138,.07)}
+.daycell.is-today{background:rgba(212,129,138,.10)}
+.daycell.is-today::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--rose)}
+.daycell .dow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--ink-soft)}
+.daycell .dnum{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:2px 0 10px}
+.daycell.is-today .dnum{color:var(--rose-deep)}
+.dots{display:flex;flex-wrap:wrap;gap:4px;min-height:30px;align-content:flex-start}
+.dots i{width:8px;height:8px;border-radius:50%;display:block}
+.dots i.open{background:none!important;border:1.5px solid var(--line-strong);width:7px;height:7px}
+.daycell .tally{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:8px;letter-spacing:.04em}
+.daycell .tally b{color:var(--ink);font-weight:400}
+.daycell .tally .late{color:var(--rose-deep)}
+
+/* ---------- stats row ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:20px 22px}
+.stat .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.stat .v{font-size:40px;font-weight:700;letter-spacing:-.04em;margin-top:4px}
+.stat .v .unit{font-size:17px;font-weight:500;color:var(--ink-soft)}
+.stat.alert .v{color:var(--rose-deep)}
+.stat .sub{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.04em;margin-top:2px}
+
+/* ---------- ring + breakdown ---------- */
+.ringrow{display:grid;grid-template-columns:300px 1fr;gap:14px}
+.ringcard{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px}
+.ring-wrap{position:relative;width:172px;height:172px}
+.ring-wrap svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--line);stroke-width:10}
+.ring-fg{fill:none;stroke:var(--rose);stroke-width:10;stroke-linecap:butt;transition:stroke-dashoffset 1s cubic-bezier(.22,.8,.3,1)}
+.ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-label .pct{font-size:38px;font-weight:700;letter-spacing:-.04em}
+.ring-label .cap{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink-soft);text-transform:uppercase}
+.ringcard .sub{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:14px;letter-spacing:.05em}
+.bars{padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.bar-row .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.bar-row .name{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.bar-row .num{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft)}
+.bar-track{height:10px;background:var(--line);position:relative}
+.bar-fill{height:100%;width:0;transition:width 1s cubic-bezier(.22,.8,.3,1)}
+
+/* ---------- delay ranking ---------- */
+.delaylist{border:1px solid var(--line-strong);background:rgba(255,255,255,.55)}
+.delay-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.delay-item:last-child{border-bottom:none}
+.delay-item .rank{font-family:var(--mono);font-size:12px;color:var(--ink-soft);width:26px}
+.delay-item .title{flex:1;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.delay-item .meta{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.04em;white-space:nowrap}
+.delay-item .dd{font-family:var(--mono);font-size:12.5px;color:var(--rose-deep);white-space:nowrap;min-width:74px;text-align:right}
+.delay-item .dd.open-flag{color:#9A6B14}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2.5px 8px;white-space:nowrap}
+.chip.content{background:var(--c-content-bg);color:var(--c-content-ink)}
+.chip.biz{background:var(--c-biz-bg);color:var(--c-biz-ink)}
+.chip.admin{background:var(--c-admin-bg);color:var(--c-admin-ink)}
+.chip.life{background:var(--c-life-bg);color:var(--c-life-ink)}
+
+/* ---------- collapsible ---------- */
+.collapser{
+  width:100%;display:flex;align-items:center;gap:14px;background:none;border:none;cursor:pointer;
+  font-family:var(--disp);text-align:left;padding:0;margin-bottom:0;
+}
+.collapser .arrow{font-family:var(--mono);font-size:12px;color:var(--rose-deep);transition:transform .3s;display:inline-block}
+.collapser[aria-expanded="true"] .arrow{transform:rotate(90deg)}
+.col-body{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .35s;}
+.col-body.open{opacity:1}
+.col-inner{padding-top:16px}
+
+/* ---------- heatmap ---------- */
+.heat{display:grid;grid-template-columns:1fr 280px;gap:14px}
+.heat .panel{padding:22px 24px}
+.panel-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px}
+.hourbars{display:flex;align-items:flex-end;gap:3px;height:120px}
+.hourbars .hb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.hourbars .hb i{display:block;background:var(--rose);min-height:0;transition:height .8s cubic-bezier(.22,.8,.3,1);height:0}
+.hourbars .hb.zero i{background:var(--line)}
+.hourbars .hb.peak i{background:var(--rose-deep)}
+.hb-axis{display:flex;gap:3px;margin-top:6px}
+.hb-axis span{flex:1;font-family:var(--mono);font-size:9px;color:var(--ink-soft);text-align:center}
+.wkbars{display:flex;flex-direction:column;gap:9px}
+.wkrow{display:flex;align-items:center;gap:10px}
+.wkrow .d{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);width:30px}
+.wkrow .t{flex:1;height:9px;background:var(--line)}
+.wkrow .t i{display:block;height:100%;background:var(--rose);width:0;transition:width .8s cubic-bezier(.22,.8,.3,1)}
+.wkrow .n{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);width:22px;text-align:right}
+
+/* ---------- insights ---------- */
+.insights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.insight{padding:22px;border-left:3px solid var(--rose);position:relative}
+.insight .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--rose-deep)}
+.insight h3{font-size:16.5px;font-weight:700;letter-spacing:-.01em;margin:8px 0 6px;line-height:1.3}
+.insight p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+
+/* ---------- history ---------- */
+.history{border:1px solid var(--line-strong);background:rgba(255,255,255,.55)}
+.hist-row{
+  display:flex;align-items:center;gap:16px;padding:13px 20px;border-bottom:1px solid var(--line);
+  cursor:pointer;transition:background .15s;background:none;width:100%;border-left:none;border-right:none;border-top:none;font-family:var(--disp);text-align:left;
+}
+.hist-row:last-child{border-bottom:none}
+.hist-row:hover{background:rgba(212,129,138,.07)}
+.hist-row .wk{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;width:170px;color:var(--ink)}
+.hist-row .bar{flex:1;height:9px;background:var(--line);min-width:60px}
+.hist-row .bar i{display:block;height:100%;background:var(--rose)}
+.hist-row .nums{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);white-space:nowrap}
+.hist-row .nums b{color:var(--ink);font-weight:400}
+
+/* ---------- modal ---------- */
+.overlay{
+  position:fixed;inset:0;background:rgba(28,25,23,.32);backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;padding:20px;z-index:50;
+  opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.overlay.open{opacity:1;pointer-events:auto}
+.modal{
+  background:var(--bg);border:1px solid var(--ink);max-width:560px;width:100%;max-height:80vh;
+  display:flex;flex-direction:column;transform:translateY(12px) scale(.985);transition:transform .3s cubic-bezier(.22,.8,.3,1);
+}
+.overlay.open .modal{transform:none}
+.modal-head{display:flex;align-items:baseline;gap:14px;padding:20px 24px;border-bottom:2px solid var(--ink)}
+.modal-head .d{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.modal-head .m{font-family:var(--mono);font-size:11px;color:var(--ink-soft);letter-spacing:.1em}
+.modal-head .x{
+  margin-left:auto;font-family:var(--mono);background:none;border:1px solid var(--ink);
+  width:30px;height:30px;cursor:pointer;font-size:13px;color:var(--ink);transition:all .15s;
+}
+.modal-head .x:hover{background:var(--ink);color:var(--bg)}
+.modal-body{overflow-y:auto;padding:8px 0}
+.mtask{display:flex;align-items:center;gap:12px;padding:11px 24px;border-bottom:1px solid var(--line)}
+.mtask:last-child{border-bottom:none}
+.mtask .st{font-family:var(--mono);font-size:13px;width:18px;text-align:center}
+.mtask .st.done{color:var(--c-life-ink)}
+.mtask .st.open{color:var(--ink-soft)}
+.mtask .ti{flex:1;font-size:14px;min-width:0}
+.mtask .ti.done{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:rgba(28,25,23,.3)}
+.mtask .tm{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);white-space:nowrap}
+.mtask .late{font-family:var(--mono);font-size:10.5px;color:var(--rose-deep);white-space:nowrap}
+.modal-empty{padding:34px 24px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.06em}
+
+/* ---------- footer / states ---------- */
+footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);letter-spacing:.08em}
+.empty-note{padding:30px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.06em;border:1px dashed var(--line-strong)}
+#loadError{display:none;margin-top:46px;padding:26px;border:1px solid var(--rose-deep);font-family:var(--mono);font-size:12.5px;color:var(--rose-deep);letter-spacing:.04em;line-height:1.8}
+
+/* ---------- responsive ---------- */
+@media(max-width:920px){
+  .ringrow{grid-template-columns:1fr}
+  .insights{grid-template-columns:1fr}
+  .heat{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .wrap{padding:0 16px 70px}
+  .today{grid-template-columns:1fr}
+  .today .cell{border-right:none;border-bottom:1px solid var(--line-strong);padding:18px 22px}
+  .today .cell:last-child{border-bottom:none}
+  .today .v{font-size:42px}
+  .stats{grid-template-columns:1fr 1fr}
+  .masthead{flex-direction:column;align-items:flex-start}
+  .weeknav{text-align:left;width:100%}
+  .navbtns{justify-content:flex-start}
+  .weekgrid{grid-template-columns:repeat(7,minmax(96px,1fr));overflow-x:auto;display:grid}
+  .weekgrid-scroll{overflow-x:auto;border:1px solid var(--ink)}
+  .weekgrid-scroll .weekgrid{border:none;min-width:680px}
+  .hist-row .wk{width:auto;min-width:120px}
+  .sec-head{flex-wrap:wrap;row-gap:4px}
+  .sec-head .sec-note{flex-basis:100%;order:10}
+  .sec-head .sec-rule{min-width:30px}
+  .delay-item{flex-wrap:wrap;row-gap:6px;column-gap:10px}
+  .delay-item .title{flex:1 1 calc(100% - 110px);white-space:normal}
+  .delay-item .dd{min-width:0}
+  .delay-item .meta{margin-left:36px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ① header -->
+  <div class="metabar reveal" style="--i:0">
+    <span class="live"><span class="live-dot"></span>PRODUCTIVITY LEDGER</span>
+    <span id="clock">--:--:--</span>
+    <span id="todayDate">—</span>
+    <span class="spacer"></span>
+    <span class="sample-tag" id="sampleTag">SAMPLE DATA · AWAITING FIRST SYNC</span>
+    <span id="lastSync">LAST SYNC —</span>
+  </div>
+
+  <header class="masthead reveal" style="--i:1">
+    <div class="brand">
+      <h1>YOYO<span class="accent">BUILDS</span></h1>
+      <div class="strap" id="strap">VOL — · TASKS LOGGED VIA APPLE REMINDERS</div>
+    </div>
+    <div class="weeknav">
+      <div class="label">Viewing week</div>
+      <div class="range" id="weekRange">—</div>
+      <div class="navbtns">
+        <button class="navbtn" id="prevWk" aria-label="Previous week">◀</button>
+        <button class="navbtn wide" id="thisWk">THIS WEEK</button>
+        <button class="navbtn" id="nextWk" aria-label="Next week">▶</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ② today panel -->
+  <section class="reveal" style="--i:2">
+    <div class="sec-head">
+      <span class="sec-no">№01</span><span class="sec-title">Today</span><span class="sec-rule"></span>
+      <span class="sec-note" id="todayNote">—</span>
+    </div>
+    <div class="today card ticked">
+      <div class="cell">
+        <div class="k">On deck</div>
+        <div class="v" id="tPending">0</div>
+        <div class="sub">PENDING · DUE TODAY OR OVERDUE</div>
+      </div>
+      <div class="cell">
+        <div class="k">Done today</div>
+        <div class="v" id="tDone">0</div>
+        <div class="sub" id="tDoneSub">MARKED COMPLETE SINCE 00:00</div>
+      </div>
+      <div class="cell">
+        <div class="k">Completion rate</div>
+        <div class="v rose" id="tRate">—</div>
+        <div class="sub">DONE ÷ (DONE + ON DECK)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ filter tabs -->
+  <section class="reveal" style="--i:3">
+    <div class="tabs" id="tabs" role="tablist"></div>
+  </section>
+
+  <!-- ④ weekly grid -->
+  <section class="reveal" style="--i:4">
+    <div class="sec-head">
+      <span class="sec-no">№02</span><span class="sec-title">Weekly Grid</span><span class="sec-rule"></span>
+      <span class="sec-note">CLICK A DAY FOR DETAIL</span>
+    </div>
+    <div class="weekgrid-scroll"><div class="weekgrid" id="weekGrid"></div></div>
+  </section>
+
+  <!-- ⑤ stats row -->
+  <section class="reveal" style="--i:5">
+    <div class="sec-head">
+      <span class="sec-no">№03</span><span class="sec-title">Week Stats</span><span class="sec-rule"></span>
+    </div>
+    <div class="stats">
+      <div class="stat card"><div class="k">Completed</div><div class="v" id="sDone">0</div><div class="sub">THIS WEEK</div></div>
+      <div class="stat card"><div class="k">Pending</div><div class="v" id="sPend">0</div><div class="sub">DUE THIS WEEK · STILL OPEN</div></div>
+      <div class="stat card alert"><div class="k">Delayed</div><div class="v" id="sLate">0</div><div class="sub">LATE DONE + OVERDUE OPEN</div></div>
+      <div class="stat card"><div class="k">Rate</div><div class="v" id="sRate">—</div><div class="sub">DONE ÷ DUE</div></div>
+    </div>
+  </section>
+
+  <!-- ⑥ ring + category breakdown -->
+  <section class="reveal" style="--i:6">
+    <div class="sec-head">
+      <span class="sec-no">№04</span><span class="sec-title">Completion · Mix</span><span class="sec-rule"></span>
+    </div>
+    <div class="ringrow">
+      <div class="ringcard card ticked">
+        <div class="ring-wrap">
+          <svg width="172" height="172" viewBox="0 0 172 172">
+            <circle class="ring-bg" cx="86" cy="86" r="76"></circle>
+            <circle class="ring-fg" id="ringFg" cx="86" cy="86" r="76"></circle>
+          </svg>
+          <div class="ring-label"><span class="pct" id="ringPct">—</span><span class="cap">This week</span></div>
+        </div>
+        <div class="sub" id="ringSub">—</div>
+      </div>
+      <div class="bars card" id="catBars"></div>
+    </div>
+  </section>
+
+  <!-- ⑦ delay ranking -->
+  <section class="reveal" style="--i:7">
+    <div class="sec-head">
+      <span class="sec-no">№05</span><span class="sec-title">Delay Ranking</span><span class="sec-rule"></span>
+      <span class="sec-note">ALL TIME · TOP OFFENDERS</span>
+    </div>
+    <div class="delaylist" id="delayList"></div>
+  </section>
+
+  <!-- ⑧ heatmap (collapsible) -->
+  <section class="reveal" style="--i:8">
+    <button class="collapser sec-head" id="heatToggle" aria-expanded="false">
+      <span class="sec-no">№06</span><span class="sec-title">High Energy Heatmap</span>
+      <span class="arrow">▶</span><span class="sec-rule"></span>
+      <span class="sec-note">BASED ON TASK COMPLETION TIME, NOT START/END TIME</span>
+    </button>
+    <div class="col-body" id="heatBody">
+      <div class="col-inner">
+        <div class="heat">
+          <div class="panel card">
+            <div class="panel-k">Completions by hour · HKT</div>
+            <div class="hourbars" id="hourBars"></div>
+            <div class="hb-axis" id="hourAxis"></div>
+          </div>
+          <div class="panel card">
+            <div class="panel-k">Output by weekday</div>
+            <div class="wkbars" id="wkBars"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ AI insights -->
+  <section class="reveal" style="--i:9">
+    <div class="sec-head">
+      <span class="sec-no">№07</span><span class="sec-title">Pattern Insights</span><span class="sec-rule"></span>
+      <span class="sec-note">AUTO-GENERATED FROM YOUR DATA</span>
+    </div>
+    <div class="insights" id="insights"></div>
+  </section>
+
+  <!-- ⑩ weekly history -->
+  <section class="reveal" style="--i:10">
+    <button class="collapser sec-head" id="histToggle" aria-expanded="false">
+      <span class="sec-no">№08</span><span class="sec-title">Weekly History Log</span>
+      <span class="arrow">▶</span><span class="sec-rule"></span>
+      <span class="sec-note">CLICK A WEEK TO VIEW IT</span>
+    </button>
+    <div class="col-body" id="histBody">
+      <div class="col-inner"><div class="history" id="histList"></div></div>
+    </div>
+  </section>
+
+  <div id="loadError">
+    DATA FEED UNREACHABLE.<br>
+    data.json could not be loaded — if you opened this file directly, serve it over http
+    (e.g. <b>python3 -m http.server</b>) or visit the deployed Vercel URL.
+  </div>
+
+  <footer class="reveal" style="--i:11">
+    <span>YOYOBUILDS © <span id="yr"></span> · ALL METRICS DERIVED FROM REMINDERS COMPLETION TIMESTAMPS</span>
+    <span>SYNC: MACBOOK → GITHUB → VERCEL · HOURLY 12:00–24:00 HKT</span>
+  </footer>
+</div>
+
+<!-- day detail modal -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <span class="d" id="mDate">—</span>
+      <span class="m" id="mMeta">—</span>
+      <button class="x" id="mClose" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ================= constants & helpers ================= */
+const CATS = {
+  content:{label:"Content", color:"var(--c-content)", ink:"var(--c-content-ink)"},
+  biz:    {label:"Business",color:"var(--c-biz)",     ink:"var(--c-biz-ink)"},
+  admin:  {label:"Admin",   color:"var(--c-admin)",   ink:"var(--c-admin-ink)"},
+  life:   {label:"Life",    color:"var(--c-life)",    ink:"var(--c-life-ink)"},
+};
+const CAT_KEYS = Object.keys(CATS);
+const HKT_MS = 8*3600*1000;
+const DAY_MS = 86400*1000;
+const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+const DOWS = ["MON","TUE","WED","THU","FRI","SAT","SUN"];
+
+/* parse "2026-06-10T14:30:00+0800" safely (Safari rejects +0800) */
+function parseTS(s){
+  const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:([+-])(\d{2}):?(\d{2}))?/.exec(s||"");
+  if(!m) return null;
+  const off = m[7] ? (m[7]==="-"?-1:1)*((+m[8])*60+(+m[9])) : 0;
+  return Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5],+m[6]) - off*60000;
+}
+/* epoch → HKT wall-clock parts */
+function hkt(epoch){
+  const d = new Date(epoch + HKT_MS);
+  return {y:d.getUTCFullYear(), mo:d.getUTCMonth(), d:d.getUTCDate(),
+          hh:d.getUTCHours(), mm:d.getUTCMinutes(), ss:d.getUTCSeconds(),
+          dow:(d.getUTCDay()+6)%7}; // 0=Mon
+}
+const pad = n => String(n).padStart(2,"0");
+const dstr = p => `${p.y}-${pad(p.mo+1)}-${pad(p.d)}`;
+function dsParts(ds){const [y,m,d]=ds.split("-").map(Number);return {y,mo:m-1,d};}
+function dsEpoch(ds){const p=dsParts(ds);return Date.UTC(p.y,p.mo,p.d);}     // date-only epoch
+function addDays(ds,n){const e=dsEpoch(ds)+n*DAY_MS;const d=new Date(e);return `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`;}
+function dayDiff(a,b){return Math.round((dsEpoch(a)-dsEpoch(b))/DAY_MS);}    // a-b in days
+function dowOf(ds){const d=new Date(dsEpoch(ds));return (d.getUTCDay()+6)%7;}
+function weekStart(ds){return addDays(ds,-dowOf(ds));}
+function fmtShort(ds){const p=dsParts(ds);return `${MONTHS[p.mo]} ${p.d}`;}
+function fmtLong(ds){const p=dsParts(ds);return `${DOWS[dowOf(ds)]} · ${MONTHS[p.mo]} ${p.d}, ${p.y}`;}
+function isoWeekNo(ds){
+  const e=dsEpoch(ds), d=new Date(e);
+  const day=(d.getUTCDay()+6)%7;
+  d.setUTCDate(d.getUTCDate()-day+3);
+  const firstThu=new Date(Date.UTC(d.getUTCFullYear(),0,4));
+  const fday=(firstThu.getUTCDay()+6)%7;
+  firstThu.setUTCDate(firstThu.getUTCDate()-fday+3);
+  return 1+Math.round((d-firstThu)/(7*DAY_MS));
+}
+const esc = s => String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ================= state ================= */
+let DATA = {completed:[],pending:[],last_updated:null};
+let C = [];            // enriched completed
+let P = [];            // enriched pending
+let cat = "all";
+let viewWeek = null;   // monday date-string of viewed week
+let todayDS = null;
+
+function nowHKT(){ return hkt(Date.now()); }
+
+function enrich(){
+  todayDS = dstr(nowHKT());
+  C = (DATA.completed||[]).map(t=>{
+    const e = parseTS(t.completed);
+    if(e===null) return null;
+    const p = hkt(e);
+    const ds = dstr(p);
+    const delay = t.due ? Math.max(0, dayDiff(ds, t.due)) : 0;
+    return {...t, _e:e, _ds:ds, _hh:p.hh, _dow:p.dow, _time:`${pad(p.hh)}:${pad(p.mm)}`, _delay:delay};
+  }).filter(Boolean);
+  P = (DATA.pending||[]).map(t=>{
+    const overdue = t.due ? Math.max(0, dayDiff(todayDS, t.due)) : 0;
+    return {...t, _overdue:overdue};
+  });
+}
+const fc = () => cat==="all" ? C : C.filter(t=>t.cat===cat);
+const fp = () => cat==="all" ? P : P.filter(t=>t.cat===cat);
+
+/* ================= header ================= */
+function tickClock(){
+  const p = nowHKT();
+  document.getElementById("clock").textContent = `${pad(p.hh)}:${pad(p.mm)}:${pad(p.ss)} HKT`;
+  document.getElementById("todayDate").textContent = fmtLong(dstr(p));
+}
+function renderHeader(){
+  const lu = parseTS(DATA.last_updated);
+  document.getElementById("lastSync").textContent = lu!==null
+    ? `LAST SYNC ${fmtShort(dstr(hkt(lu)))} ${pad(hkt(lu).hh)}:${pad(hkt(lu).mm)}`
+    : "LAST SYNC —";
+  document.getElementById("sampleTag").classList.toggle("on", !!DATA._sample);
+  document.getElementById("strap").textContent =
+    `VOL ${String(isoWeekNo(todayDS)).padStart(2,"0")} · TASKS LOGGED VIA APPLE REMINDERS`;
+  const end = addDays(viewWeek,6);
+  document.getElementById("weekRange").textContent = `${fmtShort(viewWeek)} — ${fmtShort(end)}`;
+  document.getElementById("nextWk").disabled = viewWeek >= weekStart(todayDS);
+  const minDS = C.length ? C.reduce((a,t)=>t._ds<a?t._ds:a, todayDS) : todayDS;
+  document.getElementById("prevWk").disabled = viewWeek <= weekStart(minDS);
+}
+
+/* ================= today panel ================= */
+function renderToday(){
+  const done = fc().filter(t=>t._ds===todayDS);
+  const deck = fp().filter(t=>t.due && t.due<=todayDS);
+  const rate = (done.length+deck.length) ? Math.round(done.length/(done.length+deck.length)*100) : null;
+  document.getElementById("tPending").textContent = deck.length;
+  document.getElementById("tDone").textContent = done.length;
+  document.getElementById("tRate").innerHTML = rate===null ? "—" : `${rate}<span class="unit">%</span>`;
+  const over = deck.filter(t=>t._overdue>0).length;
+  document.getElementById("todayNote").textContent =
+    over ? `${over} OVERDUE ITEM${over>1?"S":""} ROLLED IN` : "ALL CLEAR ON OVERDUE";
+}
+
+/* ================= tabs ================= */
+function renderTabs(){
+  const counts = {all:C.length};
+  CAT_KEYS.forEach(k=>counts[k]=C.filter(t=>t.cat===k).length);
+  const t = document.getElementById("tabs");
+  t.innerHTML = ["all",...CAT_KEYS].map(k=>{
+    const meta = k==="all" ? {label:"All",color:"var(--ink)"} : CATS[k];
+    return `<button class="tab ${cat===k?"active":""}" data-cat="${k}" role="tab">
+      <span class="dot" style="background:${meta.color}"></span>${meta.label}
+      <span class="n">${counts[k]??0}</span></button>`;
+  }).join("");
+  t.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{cat=b.dataset.cat;renderAll();}));
+}
+
+/* ================= weekly grid ================= */
+function renderWeek(){
+  const g = document.getElementById("weekGrid");
+  g.innerHTML = "";
+  for(let i=0;i<7;i++){
+    const ds = addDays(viewWeek,i);
+    const done = fc().filter(t=>t._ds===ds);
+    const open = fp().filter(t=>t.due===ds);
+    const late = done.filter(t=>t._delay>0).length;
+    const dots = done.slice(0,18).map(t=>`<i style="background:${CATS[t.cat]?.color||"var(--c-admin)"}"></i>`).join("")
+               + open.slice(0,6).map(()=>`<i class="open"></i>`).join("");
+    const p = dsParts(ds);
+    const cell = document.createElement("div");
+    cell.className = "daycell" + (ds===todayDS ? " is-today" : "");
+    cell.innerHTML = `<div class="dow">${DOWS[i]}</div><div class="dnum">${p.d}</div>
+      <div class="dots">${dots}</div>
+      <div class="tally"><b>${done.length}</b> done · ${open.length} open${late?` · <span class="late">${late} late</span>`:""}</div>`;
+    cell.addEventListener("click",()=>openModal(ds));
+    g.appendChild(cell);
+  }
+}
+
+/* ================= week stats + ring + bars ================= */
+function weekSlice(){
+  const end = addDays(viewWeek,6);
+  const done = fc().filter(t=>t._ds>=viewWeek && t._ds<=end);
+  const open = fp().filter(t=>t.due && t.due>=viewWeek && t.due<=end);
+  return {done, open, end};
+}
+function renderStats(){
+  const {done, open} = weekSlice();
+  const lateDone = done.filter(t=>t._delay>0).length;
+  const lateOpen = open.filter(t=>t._overdue>0).length;
+  const denom = done.length + open.length;
+  const rate = denom ? Math.round(done.length/denom*100) : null;
+  document.getElementById("sDone").textContent = done.length;
+  document.getElementById("sPend").textContent = open.length;
+  document.getElementById("sLate").textContent = lateDone + lateOpen;
+  document.getElementById("sRate").innerHTML = rate===null?"—":`${rate}<span class="unit">%</span>`;
+
+  /* ring */
+  const r = 76, circ = 2*Math.PI*r;
+  const fg = document.getElementById("ringFg");
+  fg.style.strokeDasharray = circ;
+  fg.style.strokeDashoffset = circ*(1-(rate??0)/100);
+  document.getElementById("ringPct").textContent = rate===null?"—":`${rate}%`;
+  document.getElementById("ringSub").textContent =
+    denom ? `${done.length} DONE OF ${denom} DUE/LOGGED` : "NO TASKS THIS WEEK";
+
+  /* category bars (always show full mix; the cat filter highlights) */
+  const wkAll = C.filter(t=>t._ds>=viewWeek && t._ds<=addDays(viewWeek,6));
+  const total = wkAll.length || 1;
+  document.getElementById("catBars").innerHTML = CAT_KEYS.map(k=>{
+    const n = wkAll.filter(t=>t.cat===k).length;
+    const pct = Math.round(n/total*100);
+    const dim = (cat!=="all" && cat!==k) ? "opacity:.32" : "";
+    return `<div class="bar-row" style="${dim}">
+      <div class="top"><span class="name" style="color:${CATS[k].ink}">${CATS[k].label}</span>
+      <span class="num">${n} · ${pct}%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="background:${CATS[k].color}" data-w="${pct}%"></div></div>
+    </div>`;
+  }).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll("#catBars .bar-fill").forEach(el=>el.style.width=el.dataset.w);
+  }));
+}
+
+/* ================= delay ranking ================= */
+function renderDelays(){
+  const lateDone = fc().filter(t=>t._delay>0)
+    .map(t=>({title:t.title,cat:t.cat,days:t._delay,due:t.due,open:false}));
+  const lateOpen = fp().filter(t=>t._overdue>0)
+    .map(t=>({title:t.title,cat:t.cat,days:t._overdue,due:t.due,open:true}));
+  const all = [...lateOpen,...lateDone].sort((a,b)=>b.days-a.days).slice(0,8);
+  const el = document.getElementById("delayList");
+  if(!all.length){ el.innerHTML = `<div class="modal-empty">NO DELAYED TASKS — CLEAN SHEET ⚡</div>`; return; }
+  el.innerHTML = all.map((t,i)=>`<div class="delay-item">
+      <span class="rank">${pad(i+1)}</span>
+      <span class="title">${esc(t.title)}</span>
+      <span class="chip ${t.cat}">${CATS[t.cat]?.label||t.cat}</span>
+      <span class="meta">DUE ${t.due?fmtShort(t.due):"—"}</span>
+      <span class="dd ${t.open?"open-flag":""}">+${t.days}D ${t.open?"OPEN":"LATE"}</span>
+    </div>`).join("");
+}
+
+/* ================= heatmap ================= */
+function renderHeat(){
+  const data = fc();
+  const byHour = Array(24).fill(0), byDow = Array(7).fill(0);
+  data.forEach(t=>{byHour[t._hh]++; byDow[t._dow]++;});
+  const maxH = Math.max(...byHour,1), peak = byHour.indexOf(Math.max(...byHour));
+  document.getElementById("hourBars").innerHTML = byHour.map((n,h)=>
+    `<div class="hb ${n?"":"zero"} ${h===peak&&n?"peak":""}" title="${pad(h)}:00 — ${n} tasks">
+       <i data-h="${Math.max(n/maxH*100, n?6:3)}%"></i></div>`).join("");
+  document.getElementById("hourAxis").innerHTML = byHour.map((_,h)=>
+    `<span>${h%3===0?pad(h):""}</span>`).join("");
+  const maxD = Math.max(...byDow,1);
+  document.getElementById("wkBars").innerHTML = byDow.map((n,i)=>
+    `<div class="wkrow"><span class="d">${DOWS[i]}</span>
+     <span class="t"><i data-h="${n/maxD*100}%"></i></span><span class="n">${n}</span></div>`).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    document.querySelectorAll("#hourBars i").forEach(el=>el.style.height=el.dataset.h);
+    document.querySelectorAll("#wkBars i").forEach(el=>el.style.width=el.dataset.h);
+  }));
+  syncCollapsibles();
+}
+
+/* ================= insights ================= */
+function renderInsights(){
+  const data = fc(), out = [];
+  if(data.length >= 5){
+    const byHour = Array(24).fill(0); data.forEach(t=>byHour[t._hh]++);
+    const peak = byHour.indexOf(Math.max(...byHour));
+    const share = Math.round(byHour[peak]/data.length*100);
+    out.push({t:"Peak completion window",
+      p:`Most tasks get closed around ${pad(peak)}:00 HKT (${share}% of completions). Guard that hour for the work that matters.`});
+    const nocturnal = data.filter(t=>t._hh>=21||t._hh<2).length/data.length;
+    if(nocturnal>=0.4) out.push({t:"Night owl confirmed",
+      p:`${Math.round(nocturnal*100)}% of completions land between 21:00 and 02:00. Late hours are your engine — schedule shallow admin earlier in the day.`});
+    const byDow = Array(7).fill(0); data.forEach(t=>byDow[t._dow]++);
+    const best = byDow.indexOf(Math.max(...byDow));
+    out.push({t:`${DOWS[best]} is your power day`,
+      p:`${byDow[best]} tasks closed on ${DOWS[best]}s — more than any other day. Stack important deadlines there.`});
+    const catDelay = {};
+    CAT_KEYS.forEach(k=>{
+      const ts = data.filter(t=>t.cat===k && t.due);
+      if(ts.length>=3) catDelay[k] = ts.reduce((a,t)=>a+t._delay,0)/ts.length;
+    });
+    const worst = Object.entries(catDelay).sort((a,b)=>b[1]-a[1])[0];
+    if(worst && worst[1]>0.7) out.push({t:`${CATS[worst[0]].label} keeps slipping`,
+      p:`${CATS[worst[0]].label} tasks run +${worst[1].toFixed(1)} days late on average — the worst of any category. Try halving their size or moving them to your peak window.`});
+    const wkNow = weekStart(todayDS), wkPrev = addDays(wkNow,-7);
+    const nNow = data.filter(t=>t._ds>=wkNow).length;
+    const nPrev = data.filter(t=>t._ds>=wkPrev&&t._ds<wkNow).length;
+    if(nPrev>=3) out.push({t: nNow>=nPrev ? "Momentum is up" : "Pace dipped this week",
+      p:`${nNow} completions so far this week vs ${nPrev} all of last week. ${nNow>=nPrev?"Keep the streak rolling.":"No drama — one focused afternoon closes the gap."}`});
+  }
+  const over = fp().filter(t=>t._overdue>0);
+  if(over.length>=3) out.push({t:"Overdue pile-up",
+    p:`${over.length} open tasks are past due, the oldest by ${Math.max(...over.map(t=>t._overdue))} days. A 30-minute triage today beats carrying them another week.`});
+  while(out.length<3) out.push({t:"Collecting signal",
+    p:"Not enough history yet for this slot — insights sharpen as more completions sync in from Reminders."});
+  document.getElementById("insights").innerHTML = out.slice(0,3).map((x,i)=>
+    `<div class="insight card"><span class="tag">INSIGHT_${pad(i+1)}</span>
+     <h3>${esc(x.t)}</h3><p>${esc(x.p)}</p></div>`).join("");
+}
+
+/* ================= history ================= */
+function renderHistory(){
+  const data = fc();
+  const weeks = {};
+  data.forEach(t=>{const w=weekStart(t._ds);(weeks[w]=weeks[w]||[]).push(t);});
+  const keys = Object.keys(weeks).sort().reverse();
+  const el = document.getElementById("histList");
+  if(!keys.length){ el.innerHTML=`<div class="modal-empty">NO HISTORY YET</div>`; syncCollapsibles(); return; }
+  const max = Math.max(...keys.map(k=>weeks[k].length));
+  el.innerHTML = keys.map(k=>{
+    const ts = weeks[k], late = ts.filter(t=>t._delay>0).length;
+    return `<button class="hist-row" data-wk="${k}">
+      <span class="wk">W${pad(isoWeekNo(k))} · ${fmtShort(k)} — ${fmtShort(addDays(k,6))}</span>
+      <span class="bar"><i style="width:${Math.round(ts.length/max*100)}%"></i></span>
+      <span class="nums"><b>${ts.length}</b> done · ${late} late</span>
+    </button>`;
+  }).join("");
+  el.querySelectorAll(".hist-row").forEach(b=>b.addEventListener("click",()=>{
+    viewWeek = b.dataset.wk; renderAll(); window.scrollTo({top:0,behavior:"smooth"});
+  }));
+  syncCollapsibles();
+}
+
+/* ================= modal ================= */
+function openModal(ds){
+  const done = fc().filter(t=>t._ds===ds).sort((a,b)=>a._e-b._e);
+  const open = fp().filter(t=>t.due===ds);
+  document.getElementById("mDate").textContent = fmtLong(ds);
+  document.getElementById("mMeta").textContent = `${done.length} DONE · ${open.length} OPEN`;
+  const rows = [
+    ...open.map(t=>`<div class="mtask"><span class="st open">○</span>
+      <span class="ti">${esc(t.title)}</span><span class="chip ${t.cat}">${CATS[t.cat]?.label||t.cat}</span>
+      ${t._overdue>0?`<span class="late">+${t._overdue}D OVERDUE</span>`:`<span class="tm">DUE TODAY</span>`}</div>`),
+    ...done.map(t=>`<div class="mtask"><span class="st done">✓</span>
+      <span class="ti done">${esc(t.title)}</span><span class="chip ${t.cat}">${CATS[t.cat]?.label||t.cat}</span>
+      <span class="tm">${t._time}</span>
+      ${t._delay>0?`<span class="late">+${t._delay}D LATE</span>`:""}</div>`),
+  ];
+  document.getElementById("mBody").innerHTML =
+    rows.length ? rows.join("") : `<div class="modal-empty">NOTHING LOGGED THIS DAY</div>`;
+  document.getElementById("overlay").classList.add("open");
+}
+document.getElementById("mClose").addEventListener("click",()=>document.getElementById("overlay").classList.remove("open"));
+document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")e.target.classList.remove("open");});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("overlay").classList.remove("open");});
+
+/* ================= collapsibles ================= */
+function setupCollapser(btnId,bodyId){
+  const btn=document.getElementById(btnId), body=document.getElementById(bodyId);
+  btn.addEventListener("click",()=>{
+    const open = btn.getAttribute("aria-expanded")==="true";
+    btn.setAttribute("aria-expanded", String(!open));
+    body.classList.toggle("open",!open);
+    body.style.maxHeight = open ? "0px" : body.scrollHeight+"px";
+  });
+}
+function syncCollapsibles(){
+  [["heatToggle","heatBody"],["histToggle","histBody"]].forEach(([b,bo])=>{
+    const btn=document.getElementById(b), body=document.getElementById(bo);
+    if(btn.getAttribute("aria-expanded")==="true") body.style.maxHeight=body.scrollHeight+"px";
+  });
+}
+setupCollapser("heatToggle","heatBody");
+setupCollapser("histToggle","histBody");
+
+/* ================= nav ================= */
+document.getElementById("prevWk").addEventListener("click",()=>{viewWeek=addDays(viewWeek,-7);renderAll();});
+document.getElementById("nextWk").addEventListener("click",()=>{viewWeek=addDays(viewWeek,7);renderAll();});
+document.getElementById("thisWk").addEventListener("click",()=>{viewWeek=weekStart(todayDS);renderAll();});
+
+/* ================= boot ================= */
+function renderAll(){
+  renderHeader(); renderToday(); renderTabs(); renderWeek();
+  renderStats(); renderDelays(); renderHeat(); renderInsights(); renderHistory();
+}
+async function boot(){
+  document.getElementById("yr").textContent = nowHKT().y;
+  tickClock(); setInterval(tickClock,1000);
+  try{
+    const res = await fetch(`./data.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!res.ok) throw new Error(res.status);
+    DATA = await res.json();
+  }catch(e){
+    document.getElementById("loadError").style.display="block";
+  }
+  enrich();
+  viewWeek = weekStart(todayDS);
+  renderAll();
+}
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+{
+  "_sample": true,
+  "completed": [
+    {
+      "title": "Gym session",
+      "completed": "2026-06-11T22:13:00+0800",
+      "due": "2026-06-09",
+      "cat": "life"
+    },
+    {
+      "title": "Sort inbox zero",
+      "completed": "2026-06-11T20:56:00+0800",
+      "due": "2026-06-08",
+      "cat": "admin"
+    },
+    {
+      "title": "Pitch deck polish",
+      "completed": "2026-06-11T18:07:00+0800",
+      "due": "2026-06-11",
+      "cat": "biz"
+    },
+    {
+      "title": "Morning run 5k",
+      "completed": "2026-06-11T17:53:00+0800",
+      "due": "2026-06-11",
+      "cat": "life"
+    },
+    {
+      "title": "Pitch deck polish",
+      "completed": "2026-06-11T11:19:00+0800",
+      "due": "2026-06-11",
+      "cat": "biz"
+    },
+    {
+      "title": "Grocery run",
+      "completed": "2026-06-10T18:53:00+0800",
+      "due": "2026-06-10",
+      "cat": "life"
+    },
+    {
+      "title": "Film YouTube intro",
+      "completed": "2026-06-10T18:16:00+0800",
+      "due": "2026-06-10",
+      "cat": "content"
+    },
+    {
+      "title": "Backup laptop",
+      "completed": "2026-06-10T17:16:00+0800",
+      "due": "2026-06-05",
+      "cat": "admin"
+    },
+    {
+      "title": "Morning run 5k",
+      "completed": "2026-06-09T13:56:00+0800",
+      "due": "2026-06-09",
+      "cat": "life"
+    },
+    {
+      "title": "Follow up quote",
+      "completed": "2026-06-09T13:13:00+0800",
+      "due": "2026-06-07",
+      "cat": "biz"
+    },
+    {
+      "title": "Reply emails",
+      "completed": "2026-06-08T19:35:00+0800",
+      "due": "2026-06-08",
+      "cat": "admin"
+    },
+    {
+      "title": "Laundry",
+      "completed": "2026-06-08T13:28:00+0800",
+      "due": "2026-06-05",
+      "cat": "life"
+    },
+    {
+      "title": "Design post carousel",
+      "completed": "2026-06-07T17:08:00+0800",
+      "due": "2026-06-02",
+      "cat": "content"
+    },
+    {
+      "title": "Shoot product photos",
+      "completed": "2026-06-06T12:41:00+0800",
+      "due": "2026-06-06",
+      "cat": "content"
+    },
+    {
+      "title": "Write newsletter draft",
+      "completed": "2026-06-06T09:39:00+0800",
+      "due": "2026-06-01",
+      "cat": "content"
+    },
+    {
+      "title": "Review contract terms",
+      "completed": "2026-06-05T22:13:00+0800",
+      "due": "2026-06-03",
+      "cat": "biz"
+    },
+    {
+      "title": "Write newsletter draft",
+      "completed": "2026-06-05T19:15:00+0800",
+      "due": "2026-06-05",
+      "cat": "content"
+    },
+    {
+      "title": "Yoga class",
+      "completed": "2026-06-05T18:02:00+0800",
+      "due": "2026-06-04",
+      "cat": "life"
+    },
+    {
+      "title": "Client call — Mia",
+      "completed": "2026-06-04T20:03:00+0800",
+      "due": "2026-06-04",
+      "cat": "biz"
+    },
+    {
+      "title": "Prep proposal for brand collab",
+      "completed": "2026-06-04T10:32:00+0800",
+      "due": "2026-06-04",
+      "cat": "biz"
+    },
+    {
+      "title": "Edit podcast ep 12",
+      "completed": "2026-06-03T13:44:00+0800",
+      "due": "2026-05-29",
+      "cat": "content"
+    },
+    {
+      "title": "Yoga class",
+      "completed": "2026-06-03T12:31:00+0800",
+      "due": "2026-06-02",
+      "cat": "life"
+    },
+    {
+      "title": "Call mum",
+      "completed": "2026-06-03T12:18:00+0800",
+      "due": "2026-06-03",
+      "cat": "life"
+    },
+    {
+      "title": "Gym session",
+      "completed": "2026-06-03T12:00:00+0800",
+      "due": "2026-05-29",
+      "cat": "life"
+    },
+    {
+      "title": "File receipts",
+      "completed": "2026-06-03T10:34:00+0800",
+      "due": "2026-05-31",
+      "cat": "admin"
+    },
+    {
+      "title": "Partner sync call",
+      "completed": "2026-06-02T21:03:00+0800",
+      "due": "2026-05-31",
+      "cat": "biz"
+    },
+    {
+      "title": "Write blog outline",
+      "completed": "2026-06-02T18:15:00+0800",
+      "due": "2026-05-30",
+      "cat": "content"
+    },
+    {
+      "title": "Follow up quote",
+      "completed": "2026-06-02T16:55:00+0800",
+      "due": "2026-05-28",
+      "cat": "biz"
+    },
+    {
+      "title": "Yoga class",
+      "completed": "2026-06-02T12:34:00+0800",
+      "due": "2026-06-01",
+      "cat": "life"
+    },
+    {
+      "title": "Renew domain",
+      "completed": "2026-06-02T11:42:00+0800",
+      "due": "2026-06-02",
+      "cat": "admin"
+    },
+    {
+      "title": "Grocery run",
+      "completed": "2026-06-02T10:46:00+0800",
+      "due": "2026-06-02",
+      "cat": "life"
+    },
+    {
+      "title": "Meeting w/ sponsor",
+      "completed": "2026-06-01T22:48:00+0800",
+      "due": "2026-05-30",
+      "cat": "biz"
+    },
+    {
+      "title": "Script TikTok video",
+      "completed": "2026-06-01T15:42:00+0800",
+      "due": "2026-05-31",
+      "cat": "content"
+    },
+    {
+      "title": "Reply emails",
+      "completed": "2026-06-01T13:57:00+0800",
+      "due": "2026-06-01",
+      "cat": "admin"
+    },
+    {
+      "title": "Plan content calendar",
+      "completed": "2026-06-01T13:42:00+0800",
+      "due": "2026-05-31",
+      "cat": "content"
+    },
+    {
+      "title": "Plan content calendar",
+      "completed": "2026-06-01T13:14:00+0800",
+      "due": "2026-06-01",
+      "cat": "content"
+    },
+    {
+      "title": "Partner sync call",
+      "completed": "2026-06-01T11:14:00+0800",
+      "due": "2026-06-01",
+      "cat": "biz"
+    },
+    {
+      "title": "Edit podcast ep 12",
+      "completed": "2026-05-31T22:10:00+0800",
+      "due": "2026-05-31",
+      "cat": "content"
+    },
+    {
+      "title": "Edit podcast ep 12",
+      "completed": "2026-05-30T20:48:00+0800",
+      "due": "2026-05-29",
+      "cat": "content"
+    },
+    {
+      "title": "Prep proposal for brand collab",
+      "completed": "2026-05-29T17:49:00+0800",
+      "due": "2026-05-24",
+      "cat": "biz"
+    },
+    {
+      "title": "Laundry",
+      "completed": "2026-05-29T17:07:00+0800",
+      "due": "2026-05-24",
+      "cat": "life"
+    },
+    {
+      "title": "Dentist appointment",
+      "completed": "2026-05-29T13:15:00+0800",
+      "due": "2026-05-26",
+      "cat": "life"
+    },
+    {
+      "title": "Dentist appointment",
+      "completed": "2026-05-28T21:32:00+0800",
+      "due": "2026-05-27",
+      "cat": "life"
+    },
+    {
+      "title": "Plan content calendar",
+      "completed": "2026-05-28T20:32:00+0800",
+      "due": "2026-05-23",
+      "cat": "content"
+    },
+    {
+      "title": "Follow up quote",
+      "completed": "2026-05-28T20:21:00+0800",
+      "due": "2026-05-28",
+      "cat": "biz"
+    },
+    {
+      "title": "Client call — Mia",
+      "completed": "2026-05-28T19:07:00+0800",
+      "due": "2026-05-26",
+      "cat": "biz"
+    },
+    {
+      "title": "Partner sync call",
+      "completed": "2026-05-28T09:46:00+0800",
+      "due": "2026-05-25",
+      "cat": "biz"
+    },
+    {
+      "title": "Meeting w/ sponsor",
+      "completed": "2026-05-27T23:08:00+0800",
+      "due": "2026-05-26",
+      "cat": "biz"
+    },
+    {
+      "title": "Edit reel for IG",
+      "completed": "2026-05-27T21:09:00+0800",
+      "due": "2026-05-26",
+      "cat": "content"
+    },
+    {
+      "title": "Follow up quote",
+      "completed": "2026-05-27T20:27:00+0800",
+      "due": "2026-05-22",
+      "cat": "biz"
+    },
+    {
+      "title": "Schedule next week",
+      "completed": "2026-05-27T18:24:00+0800",
+      "due": "2026-05-27",
+      "cat": "admin"
+    },
+    {
+      "title": "Laundry",
+      "completed": "2026-05-27T13:31:00+0800",
+      "due": "2026-05-27",
+      "cat": "life"
+    },
+    {
+      "title": "Call mum",
+      "completed": "2026-05-27T12:08:00+0800",
+      "due": "2026-05-27",
+      "cat": "life"
+    },
+    {
+      "title": "Review contract terms",
+      "completed": "2026-05-26T21:49:00+0800",
+      "due": "2026-05-26",
+      "cat": "biz"
+    },
+    {
+      "title": "Laundry",
+      "completed": "2026-05-26T15:04:00+0800",
+      "due": "2026-05-26",
+      "cat": "life"
+    },
+    {
+      "title": "Shoot product photos",
+      "completed": "2026-05-26T13:59:00+0800",
+      "due": "2026-05-25",
+      "cat": "content"
+    },
+    {
+      "title": "Yoga class",
+      "completed": "2026-05-25T21:24:00+0800",
+      "due": "2026-05-25",
+      "cat": "life"
+    },
+    {
+      "title": "Write newsletter draft",
+      "completed": "2026-05-25T18:10:00+0800",
+      "due": "2026-05-24",
+      "cat": "content"
+    },
+    {
+      "title": "Sort inbox zero",
+      "completed": "2026-05-25T12:22:00+0800",
+      "due": "2026-05-25",
+      "cat": "admin"
+    },
+    {
+      "title": "Send invoice #204",
+      "completed": "2026-05-25T10:14:00+0800",
+      "due": "2026-05-23",
+      "cat": "biz"
+    },
+    {
+      "title": "Reply emails",
+      "completed": "2026-05-24T19:34:00+0800",
+      "due": "2026-05-24",
+      "cat": "admin"
+    },
+    {
+      "title": "Grocery run",
+      "completed": "2026-05-24T18:53:00+0800",
+      "due": "2026-05-23",
+      "cat": "life"
+    },
+    {
+      "title": "Laundry",
+      "completed": "2026-05-23T11:24:00+0800",
+      "due": "2026-05-23",
+      "cat": "life"
+    },
+    {
+      "title": "Morning run 5k",
+      "completed": "2026-05-22T19:21:00+0800",
+      "due": "2026-05-22",
+      "cat": "life"
+    },
+    {
+      "title": "Schedule next week",
+      "completed": "2026-05-22T13:37:00+0800",
+      "due": "2026-05-22",
+      "cat": "admin"
+    },
+    {
+      "title": "Write blog outline",
+      "completed": "2026-05-22T09:12:00+0800",
+      "due": "2026-05-20",
+      "cat": "content"
+    },
+    {
+      "title": "File receipts",
+      "completed": "2026-05-21T18:02:00+0800",
+      "due": "2026-05-21",
+      "cat": "admin"
+    },
+    {
+      "title": "Script TikTok video",
+      "completed": "2026-05-21T13:08:00+0800",
+      "due": "2026-05-19",
+      "cat": "content"
+    }
+  ],
+  "pending": [
+    {
+      "title": "Pitch deck polish",
+      "due": "2026-06-05",
+      "cat": "biz"
+    },
+    {
+      "title": "Shoot product photos",
+      "due": "2026-06-05",
+      "cat": "content"
+    },
+    {
+      "title": "Meeting w/ sponsor",
+      "due": "2026-06-05",
+      "cat": "biz"
+    },
+    {
+      "title": "Meeting w/ sponsor",
+      "due": "2026-06-09",
+      "cat": "biz"
+    },
+    {
+      "title": "Follow up quote",
+      "due": "2026-06-09",
+      "cat": "biz"
+    },
+    {
+      "title": "Yoga class",
+      "due": "2026-06-10",
+      "cat": "life"
+    },
+    {
+      "title": "Review contract terms",
+      "due": "2026-06-11",
+      "cat": "biz"
+    },
+    {
+      "title": "Laundry",
+      "due": "2026-06-11",
+      "cat": "life"
+    },
+    {
+      "title": "Pitch deck polish",
+      "due": "2026-06-11",
+      "cat": "biz"
+    }
+  ],
+  "last_updated": "2026-06-11T13:00:00+0800"
+}
