@@ -202,7 +202,17 @@ def git_publish():
     stamp = datetime.datetime.now(HKT).strftime("%Y-%m-%d %H:%M")
     git("commit", "-m", f"data: update {stamp} HKT")
     git("push")
-    log("Pushed data.json — Vercel will redeploy.")
+    log("Pushed data.json to GitHub.")
+
+    # The Vercel GitHub integration is not connected, so deploy via CLI.
+    env = dict(os.environ, PATH="/usr/local/bin:" + os.environ.get("PATH", "/usr/bin:/bin"))
+    deploy = subprocess.run(
+        ["/usr/local/bin/npx", "-y", "vercel@54.11.1", "deploy", "--prod", "--yes"],
+        cwd=REPO_DIR, env=env, capture_output=True, text=True, timeout=600)
+    if deploy.returncode == 0:
+        log("Vercel production deploy triggered OK.")
+    else:
+        log("Vercel deploy FAILED:\n" + (deploy.stderr or deploy.stdout)[-800:])
     return True
 
 
