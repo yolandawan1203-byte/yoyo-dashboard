@@ -1,461 +1,288 @@
 {
-  "_sample": true,
   "completed": [
     {
-      "title": "Gym session",
-      "completed": "2026-06-11T22:13:00+0800",
-      "due": "2026-06-09",
-      "cat": "life"
+      "title": "Kid class material",
+      "completed": "2026-06-11T02:13:08+0800",
+      "cat": "admin",
+      "due": "2026-06-10"
     },
     {
-      "title": "Sort inbox zero",
-      "completed": "2026-06-11T20:56:00+0800",
-      "due": "2026-06-08",
-      "cat": "admin"
+      "title": "Run",
+      "completed": "2026-06-10T22:33:43+0800",
+      "cat": "life",
+      "due": "2026-06-10"
     },
     {
-      "title": "Pitch deck polish",
-      "completed": "2026-06-11T18:07:00+0800",
-      "due": "2026-06-11",
-      "cat": "biz"
+      "title": "Pilates",
+      "completed": "2026-06-10T22:33:42+0800",
+      "cat": "admin",
+      "due": "2026-06-10"
     },
     {
-      "title": "Morning run 5k",
-      "completed": "2026-06-11T17:53:00+0800",
-      "due": "2026-06-11",
-      "cat": "life"
+      "title": "Edit vdo",
+      "completed": "2026-06-10T22:33:28+0800",
+      "cat": "content",
+      "due": "2026-06-10"
     },
     {
-      "title": "Pitch deck polish",
-      "completed": "2026-06-11T11:19:00+0800",
-      "due": "2026-06-11",
-      "cat": "biz"
+      "title": "Post 1 vdo",
+      "completed": "2026-06-10T22:33:28+0800",
+      "cat": "content",
+      "due": "2026-06-10"
     },
     {
-      "title": "Grocery run",
-      "completed": "2026-06-10T18:53:00+0800",
-      "due": "2026-06-10",
-      "cat": "life"
+      "title": "Scw funding research",
+      "completed": "2026-06-10T18:10:23+0800",
+      "cat": "admin",
+      "due": "2026-06-10"
     },
     {
-      "title": "Film YouTube intro",
-      "completed": "2026-06-10T18:16:00+0800",
-      "due": "2026-06-10",
-      "cat": "content"
+      "title": "Manus script",
+      "completed": "2026-06-10T14:41:18+0800",
+      "cat": "content",
+      "due": "2026-06-08"
     },
     {
-      "title": "Backup laptop",
-      "completed": "2026-06-10T17:16:00+0800",
-      "due": "2026-06-05",
-      "cat": "admin"
+      "title": "review current process of work and whats business next step",
+      "completed": "2026-06-10T01:51:58+0800",
+      "cat": "biz",
+      "due": "2026-05-29"
     },
     {
-      "title": "Morning run 5k",
-      "completed": "2026-06-09T13:56:00+0800",
-      "due": "2026-06-09",
-      "cat": "life"
+      "title": "Reply all clients",
+      "completed": "2026-06-10T01:50:22+0800",
+      "cat": "biz",
+      "due": "2026-06-08"
     },
     {
-      "title": "Follow up quote",
-      "completed": "2026-06-09T13:13:00+0800",
-      "due": "2026-06-07",
-      "cat": "biz"
+      "title": "Email long ridge",
+      "completed": "2026-06-08T17:48:40+0800",
+      "cat": "admin",
+      "due": "2026-06-08"
     },
     {
-      "title": "Reply emails",
-      "completed": "2026-06-08T19:35:00+0800",
-      "due": "2026-06-08",
-      "cat": "admin"
+      "title": "Edit offer today",
+      "completed": "2026-06-08T17:00:19+0800",
+      "cat": "content",
+      "due": "2026-06-08"
     },
     {
-      "title": "Laundry",
-      "completed": "2026-06-08T13:28:00+0800",
-      "due": "2026-06-05",
-      "cat": "life"
+      "title": "Bankerclub marketing",
+      "completed": "2026-06-08T16:27:35+0800",
+      "cat": "admin",
+      "due": "2026-06-05"
     },
     {
-      "title": "Design post carousel",
-      "completed": "2026-06-07T17:08:00+0800",
-      "due": "2026-06-02",
-      "cat": "content"
+      "title": "Follow up sean",
+      "completed": "2026-06-08T14:22:34+0800",
+      "cat": "admin",
+      "due": "2026-06-05"
     },
     {
-      "title": "Shoot product photos",
-      "completed": "2026-06-06T12:41:00+0800",
-      "due": "2026-06-06",
-      "cat": "content"
+      "title": "Marketing vibe code",
+      "completed": "2026-06-05T02:35:15+0800",
+      "cat": "admin",
+      "due": "2026-06-04"
     },
     {
-      "title": "Write newsletter draft",
-      "completed": "2026-06-06T09:39:00+0800",
-      "due": "2026-06-01",
-      "cat": "content"
+      "title": "Kid class",
+      "completed": "2026-06-05T02:35:15+0800",
+      "cat": "admin",
+      "due": "2026-06-04"
     },
     {
-      "title": "Review contract terms",
-      "completed": "2026-06-05T22:13:00+0800",
-      "due": "2026-06-03",
-      "cat": "biz"
+      "title": "Driving license apply",
+      "completed": "2026-06-04T13:38:56+0800",
+      "cat": "admin",
+      "due": "2026-06-04"
     },
     {
-      "title": "Write newsletter draft",
-      "completed": "2026-06-05T19:15:00+0800",
-      "due": "2026-06-05",
-      "cat": "content"
+      "title": "Aspire",
+      "completed": "2026-06-04T13:38:55+0800",
+      "cat": "admin",
+      "due": "2026-06-04"
     },
     {
-      "title": "Yoga class",
-      "completed": "2026-06-05T18:02:00+0800",
-      "due": "2026-06-04",
-      "cat": "life"
+      "title": "Blue tick review",
+      "completed": "2026-06-04T13:38:53+0800",
+      "cat": "admin",
+      "due": "2026-06-04"
     },
     {
-      "title": "Client call — Mia",
-      "completed": "2026-06-04T20:03:00+0800",
-      "due": "2026-06-04",
-      "cat": "biz"
+      "title": "Boc insurance pay, claim",
+      "completed": "2026-05-31T23:29:55+0800",
+      "cat": "admin",
+      "due": "2026-05-28"
     },
     {
-      "title": "Prep proposal for brand collab",
-      "completed": "2026-06-04T10:32:00+0800",
-      "due": "2026-06-04",
-      "cat": "biz"
+      "title": "Ib",
+      "completed": "2026-05-31T19:14:00+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Edit podcast ep 12",
-      "completed": "2026-06-03T13:44:00+0800",
-      "due": "2026-05-29",
-      "cat": "content"
+      "title": "Typeless",
+      "completed": "2026-05-28T20:22:56+0800",
+      "cat": "admin",
+      "due": "2026-05-28"
     },
     {
-      "title": "Yoga class",
-      "completed": "2026-06-03T12:31:00+0800",
-      "due": "2026-06-02",
-      "cat": "life"
+      "title": "Tmr video plus website to call me  are",
+      "completed": "2026-05-19T11:34:00+0800",
+      "cat": "content",
+      "due": "2026-05-04"
     },
     {
-      "title": "Call mum",
-      "completed": "2026-06-03T12:18:00+0800",
-      "due": "2026-06-03",
-      "cat": "life"
+      "title": "Amex waive",
+      "completed": "2026-05-19T11:33:56+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Gym session",
-      "completed": "2026-06-03T12:00:00+0800",
-      "due": "2026-05-29",
-      "cat": "life"
+      "title": "Company set up, class, follow up bd",
+      "completed": "2026-05-14T18:26:51+0800",
+      "cat": "admin",
+      "due": "2026-04-28"
     },
     {
-      "title": "File receipts",
-      "completed": "2026-06-03T10:34:00+0800",
-      "due": "2026-05-31",
-      "cat": "admin"
+      "title": "To do list system",
+      "completed": "2026-05-14T18:26:50+0800",
+      "cat": "admin",
+      "due": "2026-05-04"
     },
     {
-      "title": "Partner sync call",
-      "completed": "2026-06-02T21:03:00+0800",
-      "due": "2026-05-31",
-      "cat": "biz"
+      "title": "Think monetisations",
+      "completed": "2026-05-10T01:46:58+0800",
+      "cat": "admin",
+      "due": "2026-05-04"
     },
     {
-      "title": "Write blog outline",
-      "completed": "2026-06-02T18:15:00+0800",
-      "due": "2026-05-30",
-      "cat": "content"
+      "title": "Cut remain 2 vdo",
+      "completed": "2026-05-04T22:52:09+0800",
+      "cat": "admin",
+      "due": "2026-05-04"
     },
     {
-      "title": "Follow up quote",
-      "completed": "2026-06-02T16:55:00+0800",
-      "due": "2026-05-28",
-      "cat": "biz"
+      "title": "Buy jk bday gift and write card, decor. Olens",
+      "completed": "2026-04-28T11:04:05+0800",
+      "cat": "content",
+      "due": "2026-04-17"
     },
     {
-      "title": "Yoga class",
-      "completed": "2026-06-02T12:34:00+0800",
-      "due": "2026-06-01",
-      "cat": "life"
+      "title": "Skill claude code for media ops",
+      "completed": "2026-04-17T02:43:24+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Renew domain",
-      "completed": "2026-06-02T11:42:00+0800",
-      "due": "2026-06-02",
-      "cat": "admin"
+      "title": "Revolute",
+      "completed": "2026-04-17T00:49:32+0800",
+      "cat": "admin",
+      "due": "2026-03-25"
     },
     {
-      "title": "Grocery run",
-      "completed": "2026-06-02T10:46:00+0800",
-      "due": "2026-06-02",
-      "cat": "life"
+      "title": "Gov funding person website",
+      "completed": "2026-04-09T11:34:54+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Meeting w/ sponsor",
-      "completed": "2026-06-01T22:48:00+0800",
-      "due": "2026-05-30",
-      "cat": "biz"
+      "title": "Send get back email",
+      "completed": "2026-04-09T11:34:50+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Script TikTok video",
-      "completed": "2026-06-01T15:42:00+0800",
-      "due": "2026-05-31",
-      "cat": "content"
+      "title": "Tax",
+      "completed": "2026-04-09T11:34:46+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Reply emails",
-      "completed": "2026-06-01T13:57:00+0800",
-      "due": "2026-06-01",
-      "cat": "admin"
+      "title": "Paperclip",
+      "completed": "2026-03-25T13:23:17+0800",
+      "cat": "admin",
+      "due": "2026-03-16"
     },
     {
-      "title": "Plan content calendar",
-      "completed": "2026-06-01T13:42:00+0800",
-      "due": "2026-05-31",
-      "cat": "content"
+      "title": "Cut 4 video, post 1",
+      "completed": "2026-03-24T17:10:35+0800",
+      "cat": "content",
+      "due": "2026-03-19"
     },
     {
-      "title": "Plan content calendar",
-      "completed": "2026-06-01T13:14:00+0800",
-      "due": "2026-06-01",
-      "cat": "content"
-    },
-    {
-      "title": "Partner sync call",
-      "completed": "2026-06-01T11:14:00+0800",
-      "due": "2026-06-01",
-      "cat": "biz"
-    },
-    {
-      "title": "Edit podcast ep 12",
-      "completed": "2026-05-31T22:10:00+0800",
-      "due": "2026-05-31",
-      "cat": "content"
-    },
-    {
-      "title": "Edit podcast ep 12",
-      "completed": "2026-05-30T20:48:00+0800",
-      "due": "2026-05-29",
-      "cat": "content"
-    },
-    {
-      "title": "Prep proposal for brand collab",
-      "completed": "2026-05-29T17:49:00+0800",
-      "due": "2026-05-24",
-      "cat": "biz"
-    },
-    {
-      "title": "Laundry",
-      "completed": "2026-05-29T17:07:00+0800",
-      "due": "2026-05-24",
-      "cat": "life"
-    },
-    {
-      "title": "Dentist appointment",
-      "completed": "2026-05-29T13:15:00+0800",
-      "due": "2026-05-26",
-      "cat": "life"
-    },
-    {
-      "title": "Dentist appointment",
-      "completed": "2026-05-28T21:32:00+0800",
-      "due": "2026-05-27",
-      "cat": "life"
-    },
-    {
-      "title": "Plan content calendar",
-      "completed": "2026-05-28T20:32:00+0800",
-      "due": "2026-05-23",
-      "cat": "content"
-    },
-    {
-      "title": "Follow up quote",
-      "completed": "2026-05-28T20:21:00+0800",
-      "due": "2026-05-28",
-      "cat": "biz"
-    },
-    {
-      "title": "Client call — Mia",
-      "completed": "2026-05-28T19:07:00+0800",
-      "due": "2026-05-26",
-      "cat": "biz"
-    },
-    {
-      "title": "Partner sync call",
-      "completed": "2026-05-28T09:46:00+0800",
-      "due": "2026-05-25",
-      "cat": "biz"
-    },
-    {
-      "title": "Meeting w/ sponsor",
-      "completed": "2026-05-27T23:08:00+0800",
-      "due": "2026-05-26",
-      "cat": "biz"
-    },
-    {
-      "title": "Edit reel for IG",
-      "completed": "2026-05-27T21:09:00+0800",
-      "due": "2026-05-26",
-      "cat": "content"
-    },
-    {
-      "title": "Follow up quote",
-      "completed": "2026-05-27T20:27:00+0800",
-      "due": "2026-05-22",
-      "cat": "biz"
-    },
-    {
-      "title": "Schedule next week",
-      "completed": "2026-05-27T18:24:00+0800",
-      "due": "2026-05-27",
-      "cat": "admin"
-    },
-    {
-      "title": "Laundry",
-      "completed": "2026-05-27T13:31:00+0800",
-      "due": "2026-05-27",
-      "cat": "life"
-    },
-    {
-      "title": "Call mum",
-      "completed": "2026-05-27T12:08:00+0800",
-      "due": "2026-05-27",
-      "cat": "life"
-    },
-    {
-      "title": "Review contract terms",
-      "completed": "2026-05-26T21:49:00+0800",
-      "due": "2026-05-26",
-      "cat": "biz"
-    },
-    {
-      "title": "Laundry",
-      "completed": "2026-05-26T15:04:00+0800",
-      "due": "2026-05-26",
-      "cat": "life"
-    },
-    {
-      "title": "Shoot product photos",
-      "completed": "2026-05-26T13:59:00+0800",
-      "due": "2026-05-25",
-      "cat": "content"
-    },
-    {
-      "title": "Yoga class",
-      "completed": "2026-05-25T21:24:00+0800",
-      "due": "2026-05-25",
-      "cat": "life"
-    },
-    {
-      "title": "Write newsletter draft",
-      "completed": "2026-05-25T18:10:00+0800",
-      "due": "2026-05-24",
-      "cat": "content"
-    },
-    {
-      "title": "Sort inbox zero",
-      "completed": "2026-05-25T12:22:00+0800",
-      "due": "2026-05-25",
-      "cat": "admin"
-    },
-    {
-      "title": "Send invoice #204",
-      "completed": "2026-05-25T10:14:00+0800",
-      "due": "2026-05-23",
-      "cat": "biz"
-    },
-    {
-      "title": "Reply emails",
-      "completed": "2026-05-24T19:34:00+0800",
-      "due": "2026-05-24",
-      "cat": "admin"
-    },
-    {
-      "title": "Grocery run",
-      "completed": "2026-05-24T18:53:00+0800",
-      "due": "2026-05-23",
-      "cat": "life"
-    },
-    {
-      "title": "Laundry",
-      "completed": "2026-05-23T11:24:00+0800",
-      "due": "2026-05-23",
-      "cat": "life"
-    },
-    {
-      "title": "Morning run 5k",
-      "completed": "2026-05-22T19:21:00+0800",
-      "due": "2026-05-22",
-      "cat": "life"
-    },
-    {
-      "title": "Schedule next week",
-      "completed": "2026-05-22T13:37:00+0800",
-      "due": "2026-05-22",
-      "cat": "admin"
-    },
-    {
-      "title": "Write blog outline",
-      "completed": "2026-05-22T09:12:00+0800",
-      "due": "2026-05-20",
-      "cat": "content"
-    },
-    {
-      "title": "File receipts",
-      "completed": "2026-05-21T18:02:00+0800",
-      "due": "2026-05-21",
-      "cat": "admin"
-    },
-    {
-      "title": "Script TikTok video",
-      "completed": "2026-05-21T13:08:00+0800",
-      "due": "2026-05-19",
-      "cat": "content"
+      "title": "Pay tennis",
+      "completed": "2026-03-19T00:31:54+0800",
+      "cat": "admin",
+      "due": "2026-03-17"
     }
   ],
   "pending": [
     {
-      "title": "Pitch deck polish",
-      "due": "2026-06-05",
-      "cat": "biz"
+      "title": "Follow up clients",
+      "cat": "biz",
+      "due": "2026-06-11"
     },
     {
-      "title": "Shoot product photos",
-      "due": "2026-06-05",
-      "cat": "content"
+      "title": "Find all vdos and schedule to red note",
+      "cat": "admin",
+      "due": "2026-06-11"
     },
     {
-      "title": "Meeting w/ sponsor",
-      "due": "2026-06-05",
-      "cat": "biz"
+      "title": "Linkedin post and profile",
+      "cat": "content",
+      "due": "2026-06-11"
     },
     {
-      "title": "Meeting w/ sponsor",
-      "due": "2026-06-09",
-      "cat": "biz"
+      "title": "New business name?",
+      "cat": "biz",
+      "due": "2026-06-11"
     },
     {
-      "title": "Follow up quote",
-      "due": "2026-06-09",
-      "cat": "biz"
+      "title": "Red note profile",
+      "cat": "admin",
+      "due": "2026-06-11"
     },
     {
-      "title": "Yoga class",
-      "due": "2026-06-10",
-      "cat": "life"
+      "title": "Sc win vdo film",
+      "cat": "content",
+      "due": "2026-06-11"
     },
     {
-      "title": "Review contract terms",
-      "due": "2026-06-11",
-      "cat": "biz"
+      "title": "Sc win apply",
+      "cat": "admin",
+      "due": "2026-06-11"
     },
     {
-      "title": "Laundry",
-      "due": "2026-06-11",
-      "cat": "life"
+      "title": "Final look on kids coach",
+      "cat": "admin",
+      "due": "2026-06-11"
     },
     {
-      "title": "Pitch deck polish",
-      "due": "2026-06-11",
-      "cat": "biz"
+      "title": "Vdo offline event vdo",
+      "cat": "admin",
+      "due": "2026-06-11"
+    },
+    {
+      "title": "Offline event story",
+      "cat": "admin",
+      "due": "2026-06-11"
+    },
+    {
+      "title": "Conference leap and aws submit",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Event organiser? 陪跑？",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Book outline",
+      "cat": "admin",
+      "due": "2026-06-13"
     }
   ],
-  "last_updated": "2026-06-11T13:00:00+0800"
+  "last_updated": "2026-06-11T02:51:03+0800"
 }
