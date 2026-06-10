@@ -30,7 +30,14 @@ index.html fetches /data.json on every load
 | `data.json` | Exported task data, committed by the script |
 | `export_reminders.py` | Reader / classifier / publisher |
 | `com.yoyobuilds.dashboard.plist` | launchd schedule (hourly 12:00–24:00) |
-| `setup.sh` | One-time install: deps + git auth + launchd |
+| `yoyosync.c` | Source for `YoyoSync.app`, the launcher launchd runs |
+| `setup.sh` | One-time install: deps + git auth + app build + launchd |
+
+> **Why YoyoSync.app and why the repo lives at `~/yoyo-dashboard`:** launchd jobs
+> can't read `~/Documents` (macOS folder protection) and a bare `python3` gets
+> silently denied Reminders access in the launchd context. The repo therefore
+> lives outside Documents, and launchd runs a tiny signed app wrapper that owns
+> the Reminders permission and spawns the Python exporter.
 
 ## Editing the category keywords
 
@@ -43,8 +50,8 @@ picks it up.
 
 - **Log:** `~/Library/Logs/yoyobuilds-dashboard.log`
 - **"Reminders access not granted"** — System Settings → Privacy & Security →
-  Reminders → enable the app that runs the script (Terminal / python3), then
-  re-run manually once: `/usr/bin/python3 export_reminders.py`
+  Reminders → enable **YoyoSync** (for scheduled runs) or **Terminal** (for
+  manual runs), then retry.
 - **Run the export immediately:** `launchctl kickstart gui/$(id -u)/com.yoyobuilds.dashboard`
 - **Mac asleep at the top of the hour?** launchd runs the job at next wake.
 - **Dashboard stale?** Check the LAST SYNC stamp in the header; then the log;

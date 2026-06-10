@@ -6,11 +6,10 @@
   <string>com.yoyobuilds.dashboard</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/bin/python3</string>
-    <string>/Users/yolanda-/Documents/Claude/Code/productivitydashboard/export_reminders.py</string>
+    <string>/Users/yolanda-/yoyo-dashboard/YoyoSync.app/Contents/MacOS/YoyoSync</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>/Users/yolanda-/Documents/Claude/Code/productivitydashboard</string>
+  <string>/Users/yolanda-/yoyo-dashboard</string>
   <key>StartCalendarInterval</key>
   <array>
     <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
