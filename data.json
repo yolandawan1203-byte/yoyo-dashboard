@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "Sc win vdo film",
+      "completed": "2026-06-11T16:47:37+0800",
+      "cat": "content",
+      "due": "2026-06-11"
+    },
+    {
       "title": "Follow up clients",
       "completed": "2026-06-11T03:07:22+0800",
       "cat": "biz",
@@ -117,11 +123,6 @@
   ],
   "pending": [
     {
-      "title": "Sc win vdo film",
-      "cat": "content",
-      "due": "2026-06-11"
-    },
-    {
       "title": "Sc win apply",
       "cat": "admin",
       "due": "2026-06-11"
@@ -182,5 +183,5 @@
       "due": "2026-06-15"
     }
   ],
-  "last_updated": "2026-06-11T13:36:37+0800"
+  "last_updated": "2026-06-11T17:00:01+0800"
 }
