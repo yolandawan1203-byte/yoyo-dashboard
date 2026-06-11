@@ -47,6 +47,7 @@ DATA_PATH = os.path.join(REPO_DIR, "data.json")
 LOG_PATH = os.path.expanduser("~/Library/Logs/yoyobuilds-dashboard.log")
 HKT = datetime.timezone(datetime.timedelta(hours=8))
 COMPLETED_LOOKBACK_DAYS = 90
+DATA_START = "2026-06-01"  # Reminders usage got serious in June; ignore older completions
 
 
 def log(msg):
@@ -224,6 +225,7 @@ def main():
 
     existing = load_existing()
     completed = merge(existing.get("completed", []), new_completed)
+    completed = [t for t in completed if (t.get("completed") or "") >= DATA_START]
 
     data = {
         "completed": completed,

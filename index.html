@@ -139,6 +139,31 @@ section{margin-top:46px}
 .daycell .tally b{color:var(--ink);font-weight:400}
 .daycell .tally .late{color:var(--rose-deep)}
 
+/* ---------- month calendar ---------- */
+.mon-nav{display:flex;align-items:center;gap:10px}
+.mon-nav .mlabel{font-family:var(--mono);font-size:12px;letter-spacing:.12em;min-width:128px;text-align:center}
+.mon-nav .navbtn{width:30px;height:26px;font-size:11px}
+.moncal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--ink);background:rgba(255,255,255,.55)}
+.mc-head{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--ink-soft);
+  padding:8px 10px;border-bottom:1px solid var(--line-strong);border-right:1px solid var(--line)}
+.mc-head:nth-child(7n){border-right:none}
+.mc-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:108px;
+  padding:8px 9px 10px;position:relative;cursor:pointer;transition:background .15s}
+.mc-cell:nth-child(7n){border-right:none}
+.mc-cell:hover{background:rgba(212,129,138,.07)}
+.mc-cell.blank{background:rgba(28,25,23,.025);cursor:default}
+.mc-cell.blank:hover{background:rgba(28,25,23,.025)}
+.mc-cell.is-today{background:rgba(212,129,138,.10)}
+.mc-cell.is-today::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--rose)}
+.mc-num{font-size:14px;font-weight:700;letter-spacing:-.01em;margin-bottom:5px}
+.mc-cell.is-today .mc-num{color:var(--rose-deep)}
+.mc-full{display:none}
+.mc-item{display:flex;align-items:center;gap:5px;font-size:11px;line-height:1.45;color:var(--ink);min-width:0}
+.mc-item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mc-item i{width:6px;height:6px;border-radius:50%;flex:none}
+.mc-more{font-family:var(--mono);font-size:9.5px;color:var(--rose-deep);letter-spacing:.08em;margin-top:2px}
+.mc-open{font-family:var(--mono);font-size:9.5px;color:var(--ink-soft);letter-spacing:.08em;margin-top:3px}
+
 /* ---------- stats row ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .stat{padding:20px 22px}
@@ -295,6 +320,16 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   .delay-item .title{flex:1 1 calc(100% - 110px);white-space:normal}
   .delay-item .dd{min-width:0}
   .delay-item .meta{margin-left:36px}
+  /* month calendar → agenda list */
+  .moncal{display:block}
+  .mc-head{display:none}
+  .mc-cell{display:none;min-height:0;border-right:none}
+  .mc-cell.has-items{display:block;padding:12px 16px}
+  .mc-cell .mc-num{display:none}
+  .mc-full{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:6px}
+  .mc-cell.is-today .mc-full{color:var(--rose-deep)}
+  .mc-item{font-size:13px;line-height:1.7}
+  .moncal-empty-mobile{display:block}
 }
 </style>
 </head>
@@ -366,10 +401,23 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
     <div class="weekgrid-scroll"><div class="weekgrid" id="weekGrid"></div></div>
   </section>
 
+  <!-- ④b month calendar -->
+  <section class="reveal" style="--i:5">
+    <div class="sec-head">
+      <span class="sec-no">№03</span><span class="sec-title">Month Calendar</span><span class="sec-rule"></span>
+      <span class="mon-nav">
+        <button class="navbtn" id="prevMo" aria-label="Previous month">◀</button>
+        <span class="mlabel" id="monLabel">—</span>
+        <button class="navbtn" id="nextMo" aria-label="Next month">▶</button>
+      </span>
+    </div>
+    <div class="moncal" id="monCal"></div>
+  </section>
+
   <!-- ⑤ stats row -->
   <section class="reveal" style="--i:5">
     <div class="sec-head">
-      <span class="sec-no">№03</span><span class="sec-title">Week Stats</span><span class="sec-rule"></span>
+      <span class="sec-no">№04</span><span class="sec-title">Week Stats</span><span class="sec-rule"></span>
     </div>
     <div class="stats">
       <div class="stat card"><div class="k">Completed</div><div class="v" id="sDone">0</div><div class="sub">THIS WEEK</div></div>
@@ -382,7 +430,7 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   <!-- ⑥ ring + category breakdown -->
   <section class="reveal" style="--i:6">
     <div class="sec-head">
-      <span class="sec-no">№04</span><span class="sec-title">Completion · Mix</span><span class="sec-rule"></span>
+      <span class="sec-no">№05</span><span class="sec-title">Completion · Mix</span><span class="sec-rule"></span>
     </div>
     <div class="ringrow">
       <div class="ringcard card ticked">
@@ -402,7 +450,7 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   <!-- ⑦ delay ranking -->
   <section class="reveal" style="--i:7">
     <div class="sec-head">
-      <span class="sec-no">№05</span><span class="sec-title">Delay Ranking</span><span class="sec-rule"></span>
+      <span class="sec-no">№06</span><span class="sec-title">Delay Ranking</span><span class="sec-rule"></span>
       <span class="sec-note">ALL TIME · TOP OFFENDERS</span>
     </div>
     <div class="delaylist" id="delayList"></div>
@@ -411,7 +459,7 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   <!-- ⑧ heatmap (collapsible) -->
   <section class="reveal" style="--i:8">
     <button class="collapser sec-head" id="heatToggle" aria-expanded="false">
-      <span class="sec-no">№06</span><span class="sec-title">High Energy Heatmap</span>
+      <span class="sec-no">№07</span><span class="sec-title">High Energy Heatmap</span>
       <span class="arrow">▶</span><span class="sec-rule"></span>
       <span class="sec-note">BASED ON TASK COMPLETION TIME, NOT START/END TIME</span>
     </button>
@@ -435,7 +483,7 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   <!-- ⑨ AI insights -->
   <section class="reveal" style="--i:9">
     <div class="sec-head">
-      <span class="sec-no">№07</span><span class="sec-title">Pattern Insights</span><span class="sec-rule"></span>
+      <span class="sec-no">№08</span><span class="sec-title">Pattern Insights</span><span class="sec-rule"></span>
       <span class="sec-note">AUTO-GENERATED FROM YOUR DATA</span>
     </div>
     <div class="insights" id="insights"></div>
@@ -444,7 +492,7 @@ footer{margin-top:70px;border-top:2px solid var(--ink);padding-top:16px;display:
   <!-- ⑩ weekly history -->
   <section class="reveal" style="--i:10">
     <button class="collapser sec-head" id="histToggle" aria-expanded="false">
-      <span class="sec-no">№08</span><span class="sec-title">Weekly History Log</span>
+      <span class="sec-no">№09</span><span class="sec-title">Weekly History Log</span>
       <span class="arrow">▶</span><span class="sec-rule"></span>
       <span class="sec-note">CLICK A WEEK TO VIEW IT</span>
     </button>
@@ -533,6 +581,7 @@ let C = [];            // enriched completed
 let P = [];            // enriched pending
 let cat = "all";
 let viewWeek = null;   // monday date-string of viewed week
+let viewMonth = null;  // first-of-month date-string of viewed month
 let todayDS = null;
 
 function nowHKT(){ return hkt(Date.now()); }
@@ -624,6 +673,51 @@ function renderWeek(){
     g.appendChild(cell);
   }
 }
+
+/* ================= month calendar ================= */
+const MONTH_FULL = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
+const MIN_MONTH = "2026-06-01";
+function monthStart(ds){ return ds.slice(0,8)+"01"; }
+function addMonths(ms,n){
+  const p = dsParts(ms);
+  const d = new Date(Date.UTC(p.y, p.mo+n, 1));
+  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-01`;
+}
+function renderMonth(){
+  const p = dsParts(viewMonth);
+  document.getElementById("monLabel").textContent = `${MONTH_FULL[p.mo]} ${p.y}`;
+  document.getElementById("prevMo").disabled = viewMonth <= MIN_MONTH;
+  document.getElementById("nextMo").disabled = viewMonth >= monthStart(todayDS);
+
+  const daysInMonth = new Date(Date.UTC(p.y, p.mo+1, 0)).getUTCDate();
+  const lead = dowOf(viewMonth);
+  const cells = [];
+  cells.push(...DOWS.map(d=>`<div class="mc-head">${d}</div>`));
+  for(let i=0;i<lead;i++) cells.push(`<div class="mc-cell blank"></div>`);
+  for(let d=1; d<=daysInMonth; d++){
+    const ds = `${p.y}-${pad(p.mo+1)}-${pad(d)}`;
+    const done = fc().filter(t=>t._ds===ds).sort((a,b)=>a._e-b._e);
+    const open = fp().filter(t=>t.due===ds);
+    const shown = done.slice(0,4).map(t=>
+      `<div class="mc-item"><i style="background:${CATS[t.cat]?.color||"var(--c-admin)"}"></i><span>${esc(t.title)}</span></div>`).join("");
+    const more = done.length>4 ? `<div class="mc-more">+${done.length-4} MORE</div>` : "";
+    const openLine = open.length ? `<div class="mc-open">○ ${open.length} OPEN</div>` : "";
+    const cls = "mc-cell" + (ds===todayDS?" is-today":"") + ((done.length||open.length)?" has-items":"");
+    cells.push(`<div class="${cls}" data-ds="${ds}">
+      <div class="mc-num">${d}</div>
+      <div class="mc-full">${fmtLong(ds)}</div>
+      ${shown}${more}${openLine}</div>`);
+  }
+  const used = lead + daysInMonth;
+  const trail = (7 - used%7) % 7;
+  for(let i=0;i<trail;i++) cells.push(`<div class="mc-cell blank"></div>`);
+  const el = document.getElementById("monCal");
+  el.innerHTML = cells.join("");
+  el.querySelectorAll(".mc-cell[data-ds]").forEach(c=>
+    c.addEventListener("click",()=>openModal(c.dataset.ds)));
+}
+document.getElementById("prevMo").addEventListener("click",()=>{viewMonth=addMonths(viewMonth,-1);renderMonth();});
+document.getElementById("nextMo").addEventListener("click",()=>{viewMonth=addMonths(viewMonth,1);renderMonth();});
 
 /* ================= week stats + ring + bars ================= */
 function weekSlice(){
@@ -822,7 +916,7 @@ document.getElementById("thisWk").addEventListener("click",()=>{viewWeek=weekSta
 
 /* ================= boot ================= */
 function renderAll(){
-  renderHeader(); renderToday(); renderTabs(); renderWeek();
+  renderHeader(); renderToday(); renderTabs(); renderWeek(); renderMonth();
   renderStats(); renderDelays(); renderHeat(); renderInsights(); renderHistory();
 }
 async function boot(){
@@ -837,6 +931,7 @@ async function boot(){
   }
   enrich();
   viewWeek = weekStart(todayDS);
+  viewMonth = monthStart(todayDS) < MIN_MONTH ? MIN_MONTH : monthStart(todayDS);
   renderAll();
 }
 boot();
