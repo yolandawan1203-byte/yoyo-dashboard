@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "Ft",
+      "completed": "2026-06-12T13:13:01+0800",
+      "cat": "admin",
+      "due": "2026-06-12"
+    },
+    {
       "title": "Sc win apply",
       "completed": "2026-06-12T01:53:52+0800",
       "cat": "admin",
@@ -156,13 +162,13 @@
       "due": "2026-06-12"
     },
     {
-      "title": "Ft",
-      "cat": "admin",
+      "title": "Yoga pilala",
+      "cat": "life",
       "due": "2026-06-12"
     },
     {
-      "title": "Yoga pilala",
-      "cat": "life",
+      "title": "Sfpick up",
+      "cat": "admin",
       "due": "2026-06-12"
     },
     {
@@ -206,5 +212,5 @@
       "due": "2026-06-15"
     }
   ],
-  "last_updated": "2026-06-12T12:06:41+0800"
+  "last_updated": "2026-06-12T14:00:05+0800"
 }
