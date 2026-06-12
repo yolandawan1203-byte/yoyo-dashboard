@@ -1,6 +1,24 @@
 {
   "completed": [
     {
+      "title": "Sc win apply",
+      "completed": "2026-06-12T01:53:52+0800",
+      "cat": "admin",
+      "due": "2026-06-11"
+    },
+    {
+      "title": "Offline event story",
+      "completed": "2026-06-12T01:06:26+0800",
+      "cat": "admin",
+      "due": "2026-06-11"
+    },
+    {
+      "title": "Vdo offline event vdo edit",
+      "completed": "2026-06-12T01:06:21+0800",
+      "cat": "content",
+      "due": "2026-06-11"
+    },
+    {
       "title": "Sc win vdo film",
       "completed": "2026-06-11T16:47:37+0800",
       "cat": "content",
@@ -123,29 +141,29 @@
   ],
   "pending": [
     {
-      "title": "Sc win apply",
-      "cat": "admin",
-      "due": "2026-06-11"
-    },
-    {
       "title": "Final look on kids coach",
       "cat": "admin",
-      "due": "2026-06-11"
+      "due": "2026-06-12"
     },
     {
-      "title": "Vdo offline event vdo edit post",
+      "title": "Vdo offline post",
       "cat": "content",
-      "due": "2026-06-11"
+      "due": "2026-06-12"
     },
     {
-      "title": "Offline event story",
+      "title": "Insurance firm",
       "cat": "admin",
-      "due": "2026-06-11"
+      "due": "2026-06-12"
     },
     {
-      "title": "Asiabanker demo",
+      "title": "Ft",
       "cat": "admin",
-      "due": "2026-06-11"
+      "due": "2026-06-12"
+    },
+    {
+      "title": "Yoga pilala",
+      "cat": "life",
+      "due": "2026-06-12"
     },
     {
       "title": "Conference leap and aws submit",
@@ -159,6 +177,11 @@
     },
     {
       "title": "Book outline",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Asiabanker demo",
       "cat": "admin",
       "due": "2026-06-13"
     },
@@ -183,5 +206,5 @@
       "due": "2026-06-15"
     }
   ],
-  "last_updated": "2026-06-11T17:00:01+0800"
+  "last_updated": "2026-06-12T12:06:41+0800"
 }
