@@ -1,6 +1,42 @@
 {
   "completed": [
     {
+      "title": "New business name?",
+      "completed": "2026-06-21T01:01:47+0800",
+      "cat": "biz",
+      "due": "2026-06-15"
+    },
+    {
+      "title": "Linkedin post and profile",
+      "completed": "2026-06-21T01:01:46+0800",
+      "cat": "content",
+      "due": "2026-06-15"
+    },
+    {
+      "title": "Asia banker present",
+      "completed": "2026-06-21T01:01:39+0800",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Manus vdo",
+      "completed": "2026-06-21T01:01:38+0800",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Insurance firm",
+      "completed": "2026-06-21T01:01:37+0800",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
+      "title": "Event organiser? 陪跑？",
+      "completed": "2026-06-21T01:01:33+0800",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
       "title": "Asiabanker demo",
       "completed": "2026-06-18T14:45:01+0800",
       "cat": "admin",
@@ -176,27 +212,7 @@
       "due": "2026-06-13"
     },
     {
-      "title": "Event organiser? 陪跑？",
-      "cat": "admin",
-      "due": "2026-06-13"
-    },
-    {
       "title": "Book outline",
-      "cat": "admin",
-      "due": "2026-06-13"
-    },
-    {
-      "title": "Insurance firm",
-      "cat": "admin",
-      "due": "2026-06-13"
-    },
-    {
-      "title": "Manus vdo",
-      "cat": "admin",
-      "due": "2026-06-13"
-    },
-    {
-      "title": "Asia banker present",
       "cat": "admin",
       "due": "2026-06-13"
     },
@@ -206,20 +222,15 @@
       "due": "2026-06-15"
     },
     {
-      "title": "Linkedin post and profile",
-      "cat": "content",
-      "due": "2026-06-15"
-    },
-    {
-      "title": "New business name?",
-      "cat": "biz",
-      "due": "2026-06-15"
-    },
-    {
       "title": "Red note profile",
       "cat": "admin",
       "due": "2026-06-15"
+    },
+    {
+      "title": "Find competition funding to join",
+      "cat": "admin",
+      "due": "2026-06-21"
     }
   ],
-  "last_updated": "2026-06-18T15:09:43+0800"
+  "last_updated": "2026-06-21T12:00:06+0800"
 }
