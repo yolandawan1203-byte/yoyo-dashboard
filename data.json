@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "Conference leap and aws submit",
+      "completed": "2026-06-24T12:39:15+0800",
+      "cat": "admin",
+      "due": "2026-06-13"
+    },
+    {
       "title": "New business name?",
       "completed": "2026-06-21T01:01:47+0800",
       "cat": "biz",
@@ -207,11 +213,6 @@
   ],
   "pending": [
     {
-      "title": "Conference leap and aws submit",
-      "cat": "admin",
-      "due": "2026-06-13"
-    },
-    {
       "title": "Book outline",
       "cat": "admin",
       "due": "2026-06-13"
@@ -232,5 +233,5 @@
       "due": "2026-06-21"
     }
   ],
-  "last_updated": "2026-06-21T12:00:06+0800"
+  "last_updated": "2026-06-24T13:00:03+0800"
 }
