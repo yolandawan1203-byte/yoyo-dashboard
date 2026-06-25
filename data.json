@@ -213,25 +213,45 @@
   ],
   "pending": [
     {
+      "title": "Abc pricing, carosel",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
+      "title": "Buildsom follow up",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
+      "title": "Typeless record",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
+      "title": "Leda excel",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
       "title": "Book outline",
       "cat": "admin",
-      "due": "2026-06-13"
+      "due": "2026-06-27"
     },
     {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
-      "due": "2026-06-15"
+      "due": "2026-06-27"
     },
     {
       "title": "Red note profile",
       "cat": "admin",
-      "due": "2026-06-15"
+      "due": "2026-06-27"
     },
     {
       "title": "Find competition funding to join",
       "cat": "admin",
-      "due": "2026-06-21"
+      "due": "2026-06-29"
     }
   ],
-  "last_updated": "2026-06-24T13:00:03+0800"
+  "last_updated": "2026-06-25T12:00:05+0800"
 }
