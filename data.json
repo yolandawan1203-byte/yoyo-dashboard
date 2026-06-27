@@ -1,6 +1,18 @@
 {
   "completed": [
     {
+      "title": "Buildsom follow up",
+      "completed": "2026-06-27T01:54:58+0800",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
+      "title": "Typeless record",
+      "completed": "2026-06-27T01:54:58+0800",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
       "title": "Conference leap and aws submit",
       "completed": "2026-06-24T12:39:15+0800",
       "cat": "admin",
@@ -218,16 +230,6 @@
       "due": "2026-06-25"
     },
     {
-      "title": "Buildsom follow up",
-      "cat": "admin",
-      "due": "2026-06-25"
-    },
-    {
-      "title": "Typeless record",
-      "cat": "admin",
-      "due": "2026-06-25"
-    },
-    {
       "title": "Leda excel",
       "cat": "admin",
       "due": "2026-06-25"
@@ -253,5 +255,5 @@
       "due": "2026-06-29"
     }
   ],
-  "last_updated": "2026-06-25T12:00:05+0800"
+  "last_updated": "2026-06-27T12:00:05+0800"
 }
