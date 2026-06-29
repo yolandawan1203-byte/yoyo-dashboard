@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "Book outline",
+      "completed": "2026-06-29T19:09:02+0800",
+      "cat": "admin",
+      "due": "2026-06-27"
+    },
+    {
       "title": "Leda excel",
       "completed": "2026-06-29T00:34:53+0800",
       "cat": "admin",
@@ -236,11 +242,6 @@
       "due": "2026-06-25"
     },
     {
-      "title": "Book outline",
-      "cat": "admin",
-      "due": "2026-06-27"
-    },
-    {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
       "due": "2026-06-27"
@@ -256,5 +257,5 @@
       "due": "2026-06-29"
     }
   ],
-  "last_updated": "2026-06-29T12:00:54+0800"
+  "last_updated": "2026-06-29T20:00:06+0800"
 }
