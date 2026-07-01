@@ -283,7 +283,7 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Upload yt vdo",
+      "title": "Connext website",
       "cat": "admin",
       "due": "2026-07-01"
     },
@@ -298,7 +298,7 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Prep qwen live demo",
+      "title": "Upload yt vdo",
       "cat": "admin",
       "due": "2026-07-01"
     },
@@ -313,6 +313,11 @@
       "due": "2026-07-01"
     },
     {
+      "title": "Prep qwen live demo",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
       "due": "2026-07-07"
@@ -323,5 +328,5 @@
       "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-01T12:11:57+0800"
+  "last_updated": "2026-07-01T17:00:06+0800"
 }
