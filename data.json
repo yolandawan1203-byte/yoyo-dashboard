@@ -1,6 +1,24 @@
 {
   "completed": [
     {
+      "title": "Text alvin/ Henson for event",
+      "completed": "2026-07-01T17:58:23+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Tidy room",
+      "completed": "2026-07-01T17:34:50+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Eddie WhatsApp",
+      "completed": "2026-07-01T17:34:47+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "Abc pricing, carosel",
       "completed": "2026-07-01T01:35:19+0800",
       "cat": "admin",
@@ -263,17 +281,7 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Text alvin/ Henson for event",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
       "title": "Data Center Asia + Leap East 定 target",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
-      "title": "Eddie WhatsApp",
       "cat": "admin",
       "due": "2026-07-01"
     },
@@ -284,11 +292,6 @@
     },
     {
       "title": "Connext website",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
-      "title": "Tidy room",
       "cat": "admin",
       "due": "2026-07-01"
     },
@@ -318,6 +321,11 @@
       "due": "2026-07-01"
     },
     {
+      "title": "Marcus kids class",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
       "due": "2026-07-07"
@@ -328,5 +336,5 @@
       "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-01T17:00:06+0800"
+  "last_updated": "2026-07-01T18:00:03+0800"
 }
