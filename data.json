@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "Abc pricing, carosel",
+      "completed": "2026-07-01T01:35:19+0800",
+      "cat": "admin",
+      "due": "2026-06-25"
+    },
+    {
       "title": "Book outline",
       "completed": "2026-06-29T19:09:02+0800",
       "cat": "admin",
@@ -237,25 +243,85 @@
   ],
   "pending": [
     {
-      "title": "Abc pricing, carosel",
+      "title": "Find competition funding to join hk and china",
       "cat": "admin",
-      "due": "2026-06-25"
+      "due": "2026-07-01"
+    },
+    {
+      "title": "開個「撈人」list —— 一個簡單 table（名 / 邊行 / founder定investor / 點follow up）。你之前 event 問完 background 啲 info 散咗,今日畀佢哋一個固定屋企。",
+      "cat": "life",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "BR 轉 Connext 名",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "加 Connext domain 落 Google Workspace",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Text alvin/ Henson for event",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Data Center Asia + Leap East 定 target",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Eddie WhatsApp",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Yoyobuilds wordmark logo",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Upload yt vdo",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Tidy room",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Name card",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Prep qwen live demo",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Prep fwd coachinv",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Prep fwb chat with boss",
+      "cat": "admin",
+      "due": "2026-07-01"
     },
     {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
-      "due": "2026-06-27"
+      "due": "2026-07-07"
     },
     {
       "title": "Red note profile",
       "cat": "admin",
-      "due": "2026-06-27"
-    },
-    {
-      "title": "Find competition funding to join",
-      "cat": "admin",
-      "due": "2026-06-29"
+      "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-06-29T20:00:06+0800"
+  "last_updated": "2026-07-01T12:11:57+0800"
 }
