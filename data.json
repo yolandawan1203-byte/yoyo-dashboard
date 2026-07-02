@@ -1,6 +1,12 @@
 {
   "completed": [
     {
+      "title": "加 Connext domain 落 Google Workspace",
+      "completed": "2026-07-02T16:11:43+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "Upload yt vdo",
       "completed": "2026-07-02T00:52:23+0800",
       "cat": "admin",
@@ -282,11 +288,6 @@
       "due": "2026-07-01"
     },
     {
-      "title": "加 Connext domain 落 Google Workspace",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
       "title": "Data Center Asia + Leap East 定 target",
       "cat": "admin",
       "due": "2026-07-01"
@@ -337,5 +338,5 @@
       "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-02T12:14:44+0800"
+  "last_updated": "2026-07-02T17:13:22+0800"
 }
