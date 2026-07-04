@@ -1,6 +1,18 @@
 {
   "completed": [
     {
+      "title": "Marcus kids class",
+      "completed": "2026-07-04T00:29:58+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Data Center Asia + Leap East 定 target",
+      "completed": "2026-07-04T00:29:50+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "加 Connext domain 落 Google Workspace",
       "completed": "2026-07-02T16:11:43+0800",
       "cat": "admin",
@@ -288,11 +300,6 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Data Center Asia + Leap East 定 target",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
       "title": "Yoyobuilds wordmark logo",
       "cat": "admin",
       "due": "2026-07-01"
@@ -323,11 +330,6 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Marcus kids class",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
       "due": "2026-07-07"
@@ -338,5 +340,5 @@
       "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-02T17:13:22+0800"
+  "last_updated": "2026-07-04T12:05:59+0800"
 }
