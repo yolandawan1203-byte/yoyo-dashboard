@@ -1,6 +1,24 @@
 {
   "completed": [
     {
+      "title": "Prep fwb chat with boss",
+      "completed": "2026-07-07T16:52:01+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Prep fwd coaching",
+      "completed": "2026-07-07T16:52:00+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
+      "title": "Prep qwen live demo",
+      "completed": "2026-07-07T16:51:59+0800",
+      "cat": "admin",
+      "due": "2026-07-01"
+    },
+    {
       "title": "Marcus kids class",
       "completed": "2026-07-04T00:29:58+0800",
       "cat": "admin",
@@ -315,21 +333,6 @@
       "due": "2026-07-01"
     },
     {
-      "title": "Prep fwd coaching",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
-      "title": "Prep fwb chat with boss",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
-      "title": "Prep qwen live demo",
-      "cat": "admin",
-      "due": "2026-07-01"
-    },
-    {
       "title": "Find all vdos and schedule to red note",
       "cat": "admin",
       "due": "2026-07-07"
@@ -340,5 +343,5 @@
       "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-05T15:00:02+0800"
+  "last_updated": "2026-07-07T17:00:06+0800"
 }
