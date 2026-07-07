@@ -341,7 +341,17 @@
       "title": "Red note profile",
       "cat": "admin",
       "due": "2026-07-07"
+    },
+    {
+      "title": "Forex",
+      "cat": "admin",
+      "due": "2026-07-07"
+    },
+    {
+      "title": "Linked",
+      "cat": "admin",
+      "due": "2026-07-07"
     }
   ],
-  "last_updated": "2026-07-07T17:00:06+0800"
+  "last_updated": "2026-07-07T20:00:03+0800"
 }
